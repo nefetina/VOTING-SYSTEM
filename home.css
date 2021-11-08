@@ -19,4 +19,7 @@ body {
     display: grid;
     width: 50%;
     background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
