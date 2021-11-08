@@ -1,0 +1,11 @@
+body {
+    display: grid;
+}
+
+.up {
+    display: grid;
+}
+
+.images {
+    display: flex;
+}
