@@ -15,11 +15,30 @@ body {
     background-position-y: center;
 }
 
+.rect1 {
+    height: 450px;
+    width: 350px;
+    background-color: aqua;
+    position: sticky;
+    left: 75%;
+    top: 20%;
+    margin-right: 0%;
+}
+
 .kanan {
-    display: grid;
-    width: 50%;
-    background-color: white;
+    height: 450px;
+    width: 350px;
+    background-color: #661617;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    z-index: -1;
+}
+
+.rect2 {
+    height: 450px;
+    width: 350px;
+    background-color: aqua;
+    position: sticky;
+    left: 75%;
+    top: 20%;
+    margin-right: 0%;
 }
