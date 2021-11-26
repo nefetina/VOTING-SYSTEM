@@ -63,6 +63,29 @@ h1 {
 @media only screen and (max-width:1200px) {
     body {
         display: grid;
+        background-color: #C4C4C4;
+    }
+    .right {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: white;
+    }
+    .kaliwa1 img {
+        width: 200px;
+        height: auto;
+        margin: 20px 0 20px 0;
+    }
+    .kaliwa1 {
+        width: 100%;
         background-color: #661617;
+        display: flex;
+        justify-self: center;
+        margin: 20px 0 20px 0;
+    }
+    form {
+        width: 100%;
+        justify-self: center;
+        margin: 20px 0 20px 0;
     }
 }
