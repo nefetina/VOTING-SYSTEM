@@ -49,14 +49,21 @@ form {
     margin-bottom: -100px;
 }
 
-.kanan {
+.inner {
     display: grid;
+    width: 100%;
+    height: fit-content;
+}
+
+.kanan {
+    display: flex;
     height: 600px;
     width: 350px;
     background-color: #661617;
     border-radius: 25px;
     z-index: 3;
     padding: 10px;
+    align-items: center;
 }
 
 .kanan input {
@@ -67,6 +74,7 @@ form {
 }
 
 .kanan h1 {
+    margin-bottom: 50px;
     justify-self: center;
 }
 
@@ -75,6 +83,7 @@ form {
     display: flex;
     background-color: ivory;
     border-radius: 20px;
+    margin-bottom: 40px;
 }
 
 .inputdiv img {
@@ -83,6 +92,7 @@ form {
 }
 
 a {
+    margin-top: 10px;
     justify-self: center;
 }
 
