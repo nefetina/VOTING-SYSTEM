@@ -21,6 +21,7 @@ form {
     display: flex;
     width: 50%;
     height: 100vh;
+    background-color: #C4C4C4;
     justify-content: center;
     align-items: center;
 }
@@ -31,39 +32,29 @@ form {
     width: 600px;
     background-color: #C4C4C4;
     border-radius: 25px;
-    padding: 10px;
+    padding: 15px;
 }
 
-
-/*.ints {
-    height: 75px;
-    display: flex;
+.right input {
+    border-radius: 25px;
 }
 
-
-.idnos {
-    display: flex;
+.form-group input {
     height: 50px;
 }
 
-.email {
-    display: flex;
-    height: 50px;
+#pindot:hover {
+    background-color: gray;
+    border: solid 1px black;
 }
 
-.pass {
-    display: grid;
-    height: 50px;
+#pindot {
+    background-color: #661617;
+    color: white;
 }
 
-
-.pass2 {
-    display: grid;
-    height: 50px;
-}*/
-
-p {
-    font-size: 20pt;
+h1 {
+    justify-self: center;
 }
 
 
