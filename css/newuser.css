@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.kaliwa1 {
+    background-color: #661617;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kaliwa1 img {
+    width: 500px;
+    height: auto;
+}
+
+form {
+    display: flex;
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    display: grid;
+    height: 600px;
+    width: 600px;
+    background-color: #C4C4C4;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+
+/*.ints {
+    height: 75px;
+    display: flex;
+}
+
+
+.idnos {
+    display: flex;
+    height: 50px;
+}
+
+.email {
+    display: flex;
+    height: 50px;
+}
+
+.pass {
+    display: grid;
+    height: 50px;
+}
+
+
+.pass2 {
+    display: grid;
+    height: 50px;
+}*/
+
+p {
+    font-size: 20pt;
+}
+
+
+/*ismol skren*/
+
+@media only screen and (max-width:1200px) {
+    body {
+        display: grid;
+        background-color: #661617;
+    }
+}
