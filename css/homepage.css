@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;800&display=swap');
 body {
     width: 100%;
     height: 100vh;
@@ -7,7 +8,23 @@ body {
 }
 
 .header {
+    height: 200px;
     display: flex;
+    padding: 10px;
+}
+
+.a {
+    padding: 10px;
+}
+
+.a img {
+    height: 150px;
+}
+
+.b {
+    padding: 10px;
+    font-family: 'Saira', sans-serif;
+    color: white;
 }
 
 .mid {
@@ -49,4 +66,22 @@ body {
 #b {
     background-color: white;
     border: 1px solid black;
+}
+
+@media only screen and (max-width:1200px) {
+    body {
+        display: grid;
+    }
+    .header {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+    .mid {
+        display: inline-block;
+        justify-content: center;
+    }
+    .btns {
+        display: grid;
+    }
 }
