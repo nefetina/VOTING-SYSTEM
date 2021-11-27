@@ -10,6 +10,43 @@ body {
     display: flex;
 }
 
+.mid {
+    display: inline-block;
+}
+
 .carousel-inner {
-    height: 100px
+    height: 350px
+}
+
+.btns {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+}
+
+.bttn {
+    display: flex;
+    width: auto;
+    height: 100px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.bttn button {
+    width: 400px;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#b:hover {
+    background-color: gray;
+    border: solid 1px black;
+}
+
+#b {
+    background-color: white;
+    border: 1px solid black;
 }
