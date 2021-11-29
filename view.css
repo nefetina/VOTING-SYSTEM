@@ -1,11 +1,15 @@
 body {
     display: grid;
+    justify-content: center;
 }
 
 .up {
     display: grid;
+    justify-content: center;
+    padding: 25px;
 }
 
-.images {
-    display: flex;
+.bb {
+    display: grid;
+    align-self: center;
 }
