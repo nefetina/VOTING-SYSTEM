@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;800&display=swap');
+body {
+    display: grid;
+    background-color: #661617;
+}
+
+.sheet {
+    display: flex;
+}
+
+.b {
+    padding: 50px;
+    font-family: 'Saira', sans-serif;
+    color: white;
+}
+
+.a img {
+    width: 200px;
+    height: 175px;
+}
+
+.header {
+    width: auto;
+    height: 50px;
+}
