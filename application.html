@@ -20,26 +20,65 @@
             <h1> APPLICATION FOR CANDIDACY </h1>
         </div>
     </div>
-    <div class="baba">
-        <input type="text" name="fname" id="fn" placeholder="FIRSTNAME">
-        <input type="text" name="Sname" id="Sn" placeholder="LASTNAME"><br/>
-        <input type="text" name="yc" id="yc" placeholder="COURSE, YEAR & SECTION">
-        <input type="number" name="age" id="age" placeholder="AGE">
-        <select name="gender" id="gender">
-                <option>SEX</option>
-                <option>MALE</option>
-                <option>FEMALE</option>
-            </select><br/>
-        <input type="text" name="position" id="position" placeholder="GOAL POSITION">
-        <input type="text" name="partylist" id="partylist" placeholder="PARTYLIST"><br/>
-        <input type="text" name="descr" id="descr" placeholder="SELF DESCRIPTION">
+    <div class="mid">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">FIRSTNAME</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="surname">SURNAME</label>
+                    <input type="text" class="form-control" id="surname">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputState">Gender</label>
+                    <select id="inputState" class="form-control">
+              <option selected>select</option>
+              <option>Female</option>
+              <option>Male</option>
+            </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="cs">COURSE AND SECTION</label>
+                    <input type="text" class="form-control" id="cs">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="pos">POSITION</label>
+                    <input type="text" class="form-control" id="pos">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="party">PARTYLIST</label>
+                    <input type="text" class="form-control" id="party">
+                </div>
+            </div>
+        </form>
+        <div class="pic">
+            <img src="images/pic.png" class="rounded float-right" alt="aa">
+        </div>
     </div>
-    <div>
-        <input type="checkbox" id="chck">
-        <label for="chck">TERMS AND CONDITION</label>
+    <div class="huli">
+        <div class="nn">
+            <label for="desc">DESCRIBE YOURSELF</label>
+            <textarea name="desc" id="desc" cols="6" rows="50"></textarea>
+        </div>
+        <div class="chck">
+            <input type="checkbox" id="chck">
+            <label for="chck">TERMS AND CONDITION</label>
+        </div>
     </div>
-    <div>
-        <input type="button" value="SUBMIT">
+    <div class="bttn">
+        <div>
+            <input type="button" value="SUBMIT">
+        </div>
     </div>
 
 </body>

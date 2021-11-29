@@ -9,6 +9,8 @@ body {
 }
 
 .b {
+    background-color: grey;
+    width: 100%;
     padding: 50px;
     font-family: 'Saira', sans-serif;
     color: white;
@@ -22,4 +24,56 @@ body {
 .header {
     width: auto;
     height: 50px;
+}
+
+.mid {
+    font-family: 'Saira', sans-serif;
+    color: white;
+    font-size: 14pt;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.mid form {
+    width: 100%;
+}
+
+.pic {
+    padding: 10px;
+    display: inline-block;
+}
+
+.pic img {
+    margin-left: 10px;
+    height: 250px;
+}
+
+.huli {
+    border: 1px solid goldenrod;
+    width: 100%;
+    font-family: 'Saira', sans-serif;
+    font-size: 14pt;
+    color: white;
+    display: grid;
+    padding: 50px;
+}
+
+.nn {
+    display: grid;
+    width: 100%;
+    height: 100px;
+}
+
+.nn textarea {
+    resize: none;
+}
+
+.bttn {
+    display: grid;
+    align-content: flex-end;
+}
+
+#pindot {
+    align-self: flex-end;
 }
