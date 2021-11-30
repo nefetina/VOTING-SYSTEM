@@ -23,11 +23,11 @@ section {
     padding: 10px;
 }
 
-.a {
+.aa {
     padding: 10px;
 }
 
-.a img {
+.aa img {
     height: 150px;
 }
 
@@ -62,7 +62,6 @@ section {
     height: 60px;
     border-radius: 10px;
     margin: 20px 100px 20px 100px;
-    background-color: aqua;
 }
 
 #b:hover {
@@ -73,6 +72,24 @@ section {
 #b {
     background-color: white;
     border: 1px solid black;
+}
+
+a:link,
+a:visited {
+    width: 400px;
+    height: 60px;
+    margin: 20px 100px 20px 100px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    padding: 17px;
+}
+
+a:hover,
+a:active {
+    background-color: gray;
 }
 
 .aside {
