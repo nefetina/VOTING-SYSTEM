@@ -31,6 +31,12 @@ section {
     height: 150px;
 }
 
+.bb {
+    padding: 10px;
+    font-family: 'Saira', sans-serif;
+    color: white;
+}
+
 .b {
     padding: 10px;
     font-family: 'Saira', sans-serif;
@@ -105,17 +111,43 @@ a:active {
 
 @media only screen and (max-width:1200px) {
     body {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        background-color: #661617;
+    }
+    main {
+        width: 100%;
         display: grid;
     }
-    .header {
-        display: flex;
+    section {
         width: 100%;
-        height: 100%;
+        display: grid;
+    }
+    .aside {
+        display: none;
+    }
+    .bttn {
+        width: 50px;
+        display: grid;
     }
     .btns {
         display: grid;
     }
-    .bttn button {
-        display: grid;
+    .mid {
+        width: 100%;
+        padding: 10px;
+    }
+    .aa {
+        padding: 10px;
+    }
+    .aa img {
+        height: 100px;
+    }
+    .bb {
+        font-size: 14px;
+        padding: 10px;
+        font-family: 'Saira', sans-serif;
+        color: white;
     }
 }
