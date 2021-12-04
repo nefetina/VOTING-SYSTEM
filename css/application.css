@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;800&display=swap');
 body {
     display: grid;
+    width: 100%;
+    height: 100vh;
     background-color: #661617;
 }
 
 .sheet {
+    width: 100%;
     display: flex;
 }
 
@@ -12,6 +15,7 @@ body {
     background-color: grey;
     width: 100%;
     padding: 50px;
+    font-size: 24pt;
     font-family: 'Saira', sans-serif;
     color: white;
 }
@@ -44,6 +48,10 @@ body {
     height: 250px;
 }
 
+.pic label {
+    align-self: center;
+}
+
 .huli {
     border: 1px solid goldenrod;
     width: 100%;
@@ -51,17 +59,20 @@ body {
     font-size: 14pt;
     color: white;
     display: grid;
-    padding: 50px;
 }
 
 .nn {
     display: grid;
-    width: 100%;
-    height: 100px;
+    height: 200px;
+    padding: 5px;
 }
 
 .nn textarea {
     resize: none;
+}
+
+.chck {
+    width: 100%;
 }
 
 .bttn {
@@ -75,4 +86,42 @@ body {
     height: 50px;
     font-family: 'Saira', sans-serif;
     font-size: 14pt;
+}
+
+@media only screen and (max-width:1200px) {
+    body {
+        display: grid;
+        width: 100px;
+        height: 100vh;
+    }
+    .sheet {
+        width: 100%;
+        display: flex;
+    }
+    .a img {
+        width: 150px;
+        height: 150px;
+    }
+    .b {
+        background-color: grey;
+        width: 100%;
+        font-size: 24pt;
+        font-family: 'Saira', sans-serif;
+        color: white;
+    }
+    .mid {
+        display: grid;
+    }
+    .mid form {
+        display: grid;
+        width: 100%;
+    }
+    .huli {
+        display: grid;
+        width: 100%;
+    }
+    .nn {
+        display: grid;
+        width: 100%;
+    }
 }

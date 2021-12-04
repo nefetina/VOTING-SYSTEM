@@ -31,12 +31,6 @@ section {
     height: 150px;
 }
 
-.bb {
-    padding: 10px;
-    font-family: 'Saira', sans-serif;
-    color: white;
-}
-
 .b {
     padding: 10px;
     font-family: 'Saira', sans-serif;
@@ -143,11 +137,5 @@ a:active {
     }
     .aa img {
         height: 100px;
-    }
-    .bb {
-        font-size: 14px;
-        padding: 10px;
-        font-family: 'Saira', sans-serif;
-        color: white;
     }
 }
