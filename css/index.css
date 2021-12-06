@@ -76,6 +76,7 @@ form {
 .kanan h1 {
     margin-bottom: 50px;
     justify-self: center;
+    color: white;
 }
 
 .inputdiv {
@@ -91,7 +92,22 @@ form {
     height: 50px;
 }
 
+#bb {
+    background-color: white;
+    color: black;
+}
+
+#bb:hover {
+    background-color: #C4C4C4;
+    color: black;
+}
+
 p {
+    margin-top: 10px;
+    justify-self: center;
+}
+
+a {
     margin-top: 10px;
     justify-self: center;
 }
