@@ -58,6 +58,8 @@ body {
     font-size: 14pt;
     color: white;
     display: grid;
+    align-content: center;
+    padding: 10px;
 }
 
 .nn {
