@@ -28,53 +28,53 @@ p {
 }
 
 .res {
+    width: 100%;
     display: grid;
-    justify-content: center;
-    padding: 50px;
 }
 
 .pers {
     display: flex;
-    padding: 50px;
     width: 100%;
+    justify-content: space-evenly;
+    margin-top: 2%;
 }
 
 .pers img {
-    width: 150px;
     height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pers label {
     display: grid;
-    padding: 50px;
     font-family: 'saira', sans-serif;
     font-size: 15pt;
     color: white;
+    text-align: center;
 }
 
 .sekand {
-    display: flex;
-    padding: 50px px;
-    width: 100%;
     justify-content: center;
-}
-
-.sekand img {
-    width: 150px;
-    height: 150px;
-}
-
-.sekand label {
-    display: grid;
-    padding: 15px;
-    font-family: 'saira', sans-serif;
-    font-size: 15pt;
-    color: white;
 }
 
 .last {
     display: flex;
     align-self: flex-end;
+    justify-content: flex-end;
+    background-color: grey;
+}
+
+.last a {
+    color: white;
+    text-decoration: none;
+    font-size: 16;
+    font-weight: bold;
+    margin-right: 5%;
+}
+
+.last a:hover {
+    color: black
 }
 
 @media only screen and (max-width:1200px) {
