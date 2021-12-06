@@ -95,11 +95,10 @@ a:active {
 .aside {
     justify-content: center;
     display: grid;
-    border: 1px solid palevioletred;
     font-family: 'Saira', sans-serif;
     font-size: 40pt;
     width: 5%;
-    background-color: aquamarine;
+    background-color: #c4c4c4;
     margin: 0 50px 0 0;
 }
 
