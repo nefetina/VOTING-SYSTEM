@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;800&display=swap');
+body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    background-color: #661617;
+}
+
+.sheet {
+    display: flex;
+}
+
+.b {
+    background-color: grey;
+    width: 100%;
+    height: 150px;
+    padding: 40px;
+    font-family: 'Saira', sans-serif;
+    color: white;
+}
+
+p {
+    font-size: 40pt;
+}
+
+.a img {
+    width: 200px;
+}
+
+.last {
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    background-color: grey;
+}
+
+.last a {
+    color: white;
+    text-decoration: none;
+    font-size: 16;
+    font-weight: bold;
+    margin-right: 5%;
+}
+
+.last a:hover {
+    color: black
+}
+
+@media only screen and (max-width:1200px) {
+    body {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        background-color: #661617;
+    }
+    .sheet {
+        display: flex;
+    }
+    .a img {
+        width: 100px;
+    }
+    .b {
+        background-color: grey;
+        width: 100%;
+        height: 150px;
+        padding: 25px;
+        font-family: 'Saira', sans-serif;
+        color: white;
+    }
+    p {
+        font-size: 20pt;
+    }
+}
