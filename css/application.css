@@ -39,17 +39,8 @@ body {
 }
 
 .pic {
-    padding: 10px;
+    padding: 50px;
     display: inline-block;
-}
-
-.pic img {
-    margin-left: 10px;
-    height: 250px;
-}
-
-.pic label {
-    align-self: center;
 }
 
 .huli {
