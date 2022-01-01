@@ -93,6 +93,8 @@ form {
 }
 
 #bb {
+    height: 50px;
+    border-radius: 20px;
     background-color: white;
     color: black;
 }

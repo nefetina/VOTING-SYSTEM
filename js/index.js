@@ -3,8 +3,8 @@ var pass = document.getElementById("pass").value;
 
 function check() {
     if (email) {
-        console.log(email);
+        console.log(email + pass);
     } else {
-        console.log("wala")
+        console.log("wala");
     }
 }
