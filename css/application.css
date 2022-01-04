@@ -82,6 +82,15 @@ body {
     border: 1px solid black;
 }
 
+#cancel {
+    width: 100px;
+    height: 50px;
+    font-family: 'Saira', sans-serif;
+    font-size: 14pt;
+    background-color: white;
+    border: 1px solid black;
+}
+
 a {
     text-decoration: none;
     width: 100px;
