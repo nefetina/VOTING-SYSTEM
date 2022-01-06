@@ -4,16 +4,12 @@ $(document).ready(function() {
         username = $('#email').val();
         password = $('#pass').val();
 
-        if (username == "admin@gsfe.tupcavite.edu.ph" && password == "admin123") {
+        if (username == "comelec" && password == "comtupc") {
+            location.href = "comelec.html";
+        } else if (username == "student" && password == "student123") {
             location.href = "homepage.html";
         } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Username and/or Password is incorrect',
-                text: 'Something went wrong!',
-                confirmButtonColor: '#A42222',
-                confirmButtonText: 'Okay'
-            });
+            window.alert("WRONG DETAILS")
         }
     })
 

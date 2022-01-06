@@ -92,7 +92,14 @@ form {
     height: 50px;
 }
 
+.btn {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
 #bb {
+    width: 250px;
     height: 50px;
     border-radius: 20px;
     background-color: white;
