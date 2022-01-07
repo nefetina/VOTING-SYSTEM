@@ -7,12 +7,12 @@ $(document).ready(function() {
         var age = $('#age').val();
         var position = $('#pos').val();
         var parte = $('#party').val();
-        var desc = $('#desc')
+        var desc = $('#desc');
 
-        var applications = "<tr><td>" + fname + "</td><td>" + surname + "</td><td>" + course + "</td><td>" + age + "</td><td>" + position + "</td><td>" +
-            position + "</td><td>" + parte + "</td><td>";
+        //var applications = "<tr><td>" + fname + "</td><td>" + surname + "</td><td>" + course + "</td><td>" + age + "</td><td>" + position + "</td><td>" +
+        //position + "</td><td>" + parte + "</td><td>";
 
-        $('#attendanceTable').append(applications);
+        //$('#attendanceTable').append(applications);
 
         console.log(fname);
         console.log(sname);
@@ -21,7 +21,7 @@ $(document).ready(function() {
         console.log(position);
         console.log(parte);
         console.log(desc);
-        console.log(applications);
+        //console.log(applications);
 
     })
 
