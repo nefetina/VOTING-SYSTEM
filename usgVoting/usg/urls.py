@@ -2,6 +2,6 @@ from django.urls import path
 
 from . import views
 
-urlspatters = [
+urlspatterns = [
     path('', views.index, name='index'),
 ]
