@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,14 +11,14 @@
     <title>TUPC USG</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+
 
 </head>
 
 <body>
-
     <div class="kaliwa">
-        <img src="images/usg.png" alt="usg">
+        <img src="{%static 'images/usg.png' %}" alt="usg">
     </div>
     <form>
         <div class="rect1">
@@ -27,11 +29,11 @@
             <div class="inner">
                 <h1>WELCOME</h1>
                 <div class="inputdiv">
-                    <img src="images/head.png" alt="head">
+                    <img src="{%static 'images/head.png' %}" alt="head">
                     <input type="email" name="email" id="email" placeholder="abc.def@gsfe.tupcavite.edu.ph">
                 </div>
                 <div class="inputdiv">
-                    <img src="images/eye.png" alt="aa">
+                    <img src="{%static 'images/eye.png' %}" alt="aa">
                     <input type="password" name="pass" id="pass" placeholder="password">
                 </div>
                 <div class="btn">
