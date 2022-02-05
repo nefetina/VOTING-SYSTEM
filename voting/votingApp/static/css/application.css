@@ -15,7 +15,7 @@ body {
     background-color: grey;
     width: 100%;
     padding: 50px;
-    font-size: 24pt;
+    font-size: 32pt;
     font-family: 'Saira', sans-serif;
     color: white;
 }
@@ -31,40 +31,22 @@ body {
     font-size: 14pt;
     display: flex;
     justify-content: center;
-    padding: 50px;
+    margin: 20px 20px 10px 20px;
 }
 
 .mid form {
     width: 100%;
+    padding: 10px
 }
 
-.pic {
-    padding: 50px;
-    display: inline-block;
+.last {
+    display: grid;
 }
 
 .huli {
     width: 100%;
-    font-family: 'Saira', sans-serif;
-    font-size: 14pt;
-    color: white;
-    display: grid;
-    align-content: center;
-    padding: 10px;
-}
-
-.nn {
     display: grid;
     height: 200px;
-    padding: 5px;
-}
-
-.nn textarea {
-    resize: none;
-}
-
-.chck {
-    width: 100%;
 }
 
 .bttn {
@@ -89,6 +71,16 @@ body {
     font-size: 14pt;
     background-color: white;
     border: 1px solid black;
+}
+
+.formss {
+    display: grid;
+    width: 100%;
+}
+
+#desc {
+    width: 100%;
+    height: 150px;
 }
 
 a {
