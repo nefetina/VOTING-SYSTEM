@@ -80,6 +80,18 @@ p {
     color: black
 }
 
+.delete {
+    background-color: #bf4143;
+}
+
+.delete a {
+    color: white;
+    text-decoration: none;
+    font-size: 16;
+    font-weight: bold;
+    margin-right: 5%;
+}
+
 @media only screen and (max-width:1200px) {
     body {
         width: 100%;

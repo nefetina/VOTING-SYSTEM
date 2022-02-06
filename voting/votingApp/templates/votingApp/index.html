@@ -20,7 +20,7 @@
     <div class="kaliwa">
         <img src="{%static 'images/usg.png' %}" alt="usg">
     </div>
-    <form method="post">
+    <form action="{% url 'votingApp:userlogin' %}" method="post">
         {% csrf_token %}
         <div class="rect1">
 
@@ -38,8 +38,8 @@
                     <input type="password" name="pass" id="pass" placeholder="password">
                 </div>
                 <div class="btn">
-                    <button id="bb">LOG IN</button>
-                    <a href="{% url 'newreg1' %}">SIGN UP</a>
+                    <button id="bb" type="submit">LOG IN</button>
+                    <a href="{% url 'votingApp:newreg1' %}">SIGN UP</a>
                 </div>
             </div>
         </div>

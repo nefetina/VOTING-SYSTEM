@@ -18,7 +18,7 @@
     <div class="sheet">
         <div class="top">
             <div class="img">
-                <img src="{%static 'images/usg.png %}" width="200px" height="200px">
+                <img src="{%static 'images/usg.png' %}" width="200px" height="200px">
             </div>
             <div class="sulat">
                 <div class="in">
@@ -35,72 +35,30 @@
             <table id="candidates" class="table d-print-table-cell">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Firstname</th>
                         <th scope="col">Surname</th>
                         <th scope="col">Age</th>
                         <th scope="col">Course & Section</th>
                         <th scope="col">Position</th>
                         <th scope="col">Partylist</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for files in nef1 %}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>22</td>
-                        <td>BSIE-ICT-2A</td>
-                        <td>President</td>
-                        <td>None</td>
+                        <td>{{files.firstname}}</td>
+                        <td>{{files.surname}}</td>
+                        <td>{{files.age}}</td>
+                        <td>{{files.course}}</td>
+                        <td>{{files.position}}</td>
+                        <td>{{files.partylist}}</td>
+                        <td><button class="delete"><a href="{% url 'votingApp:delete' files.id %}">Delete</a></button></td>
+
 
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>22</td>
-                        <td>BSME-2A</td>
-                        <td>Vice President</td>
-                        <td>Manalo</td>
+                    {% endfor %}
 
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>Gonzales</td>
-                        <td>20</td>
-                        <td>BET-COET-NS-2B</td>
-                        <td>President</td>
-                        <td>None</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Shiela</td>
-                        <td>Crus</td>
-                        <td>22</td>
-                        <td>BSIE-ICT-3B</td>
-                        <td>President</td>
-                        <td>None</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Ankol</td>
-                        <td>Badi</td>
-                        <td>25</td>
-                        <td>BSIE-ICT-3A</td>
-                        <td>Senator</td>
-                        <td>None</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Lisa</td>
-                        <td>Perez</td>
-                        <td>23</td>
-                        <td>BSCE-3B</td>
-                        <td>Treasurer</td>
-                        <td>Manalo</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -111,9 +69,9 @@
         <button id="b">UPLOAD</button>
     </div>
 
-    <div class="last">
+    {% comment %} <div class="last">
         <a type="button" href="{% url 'index' %}" id="button">LOG OUT</a>
-    </div>
+    </div>  {% endcomment %}
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

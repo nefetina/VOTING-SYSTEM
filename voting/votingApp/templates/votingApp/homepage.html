@@ -1,5 +1,4 @@
-{% load static %}
-<!DOCTYPE html>
+<!DOCTYPE html> {% load static %}
 <html lang="en">
 
 <head>
@@ -21,9 +20,11 @@
                     <img src="{%static 'images/head.png' %}" alt="head">
                 </div>
                 <div class="b">
+                    {% for nef in data %}
                     <h1>WELCOME!</h1>
-                    <h2>Student</h2>
+                    <h2>{{nef.firstname}}</h2>
                     <h4>Great day TUPcian! Here are the currect candidates!</h4>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -67,11 +68,11 @@
             <div class="btns">
                 <div class="bttn">
                     <a type="button" href="https://docs.google.com/forms/d/1vAqZ-d46Kn8krVMIS1hFEbrd_CiD4NvOn2PUB47fxHQ/viewform?edit_requested=true" value="btn" target="_blank" class="b">VOTE CANDIDATES</a>
-                    <a id="b" href="{% url 'application' %}">FILE CANDIDACY</a>
+                    <a id="b" href="{% url 'votingApp:application' %}">FILE CANDIDACY</a>
                 </div>
                 <div class="bttn">
-                    <a id="b" href="{% url 'result' %}">VIEW RESULTS</a>
-                    <a id="b" href="{% url 'index' %}">LOG OUT</a>
+                    <a id="b" href="{% url 'votingApp:result' %}">VIEW RESULTS</a>
+                    <a id="b" href="{% url 'votingApp:index' %}">LOG OUT</a>
                 </div>
             </div>
 

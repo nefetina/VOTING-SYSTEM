@@ -1,6 +1,4 @@
-{% load static %}
-
-<!DOCTYPE html>
+<!DOCTYPE html> {% load static %}
 <html lang="en">
 
 <head>
@@ -23,7 +21,7 @@
         </div>
     </div>
     <div class="mid">
-        <form  method="post">
+        <form action="/peoples/" method="post">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -76,7 +74,7 @@
 
             </div>
             <div class="bttn">
-                <a href="{% url 'homepage' %}" id="cancel">CANCEL</a>
+                <a href="{% url 'votingApp:homepage' %}" id="cancel">CANCEL</a>
                 <input class="aaa" id="pindot" type="submit" name="submit" value="SUBMIT">
             </div>
         </form>

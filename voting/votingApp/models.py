@@ -15,10 +15,10 @@ class newreg(models.Model):
     idno = models.CharField(max_length=15, null=False)
     email = models.EmailField(max_length=50, null=False)
     password = models.CharField(max_length=15,null=False)
-    confirm_passsword = models.CharField(max_length=1, null=False)
+    
 
 
-class application(models.Model):
+class candidates(models.Model):
     gender = [
         ('FEMALE', 'FEMALE'),
         ('MALE', 'MALE'),
