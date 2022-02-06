@@ -5,7 +5,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('newreg/', views.newreg, name='newreg'),
+    path('newreg1/', views.newreg1, name='newreg1'),
+    path('new/', views.new, name='new'),
     path('homepage/', views.homepage, name='homepage'),
     path('application/', views.application, name='application'),
     path('result/', views.result, name='result'),
