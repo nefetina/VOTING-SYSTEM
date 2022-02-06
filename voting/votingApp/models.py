@@ -1,19 +1,21 @@
-from asyncio.windows_events import NULL
-from email.mime import image
-from string import digits
-from unicodedata import digit
+
 from django.db import models
-from django.forms import TextInput
+import datetime
+import os
 
 # Create your models here.
+def filename(request, filename):
+    old_filename = filename
+    timenow = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    filename = "%s%s", (timenow, old_filename)
+    return os.path.join('uploads/', filename)
 
 class newreg(models.Model):
-    firstname = models.CharField(max_length=15 )
-    idno = models.CharField(max_length=15 )
-    email = models.EmailField(max_length=50 )
-    password = models.CharField(max_length=15 )
-    confirm_passsword = models.CharField(max_length=1)
-
+    firstname = models.CharField(max_length=15, null=False)
+    idno = models.CharField(max_length=15, null=False)
+    email = models.EmailField(max_length=50, null=False)
+    password = models.CharField(max_length=15,null=False)
+    confirm_passsword = models.CharField(max_length=1, null=False)
 
 
 class application(models.Model):
@@ -22,14 +24,14 @@ class application(models.Model):
         ('MALE', 'MALE'),
     ]
 
-    firstname = models.CharField(max_length=15)
-    surname = models.CharField(max_length=15)
-    course = models.CharField(max_length=15)
-    age = models.IntegerField()
-    gender = models.CharField(max_length=7, choices=gender,)
-    position = models.CharField(max_length=15)
-    partylist = models.CharField(max_length=15)
-    image = models.ImageField()
-    description = models.CharField(max_length=600)
+    firstname = models.CharField(max_length=15, null=False)
+    surname = models.CharField(max_length=15,null=False)
+    course = models.CharField(max_length=15, null=False)
+    age = models.IntegerField(null=False)
+    gender = models.CharField(max_length=7, choices=gender,null=False)
+    position = models.CharField(max_length=15, null=False)
+    partylist = models.CharField(max_length=15,null=False)
+    image = models.ImageField(upload_to='filepath', null=False)
+    description = models.CharField(max_length=600, null=False)
 
 

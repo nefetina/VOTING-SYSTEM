@@ -19,7 +19,8 @@
         <img src="{%static 'images/usg.png' %}" alt="aa">
     </div>
 
-    <form method="post">
+    <form action="" method="post">
+        {% csrf_token %}
         <div class="right">
             <h1>REGISTRATION</h1>
 
