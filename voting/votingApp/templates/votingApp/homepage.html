@@ -1,4 +1,5 @@
-<!DOCTYPE html> {% load static %}
+<!DOCTYPE html>
+ {% load static %}
 <html lang="en">
 
 <head>
@@ -22,7 +23,7 @@
                 <div class="b">
                     {% for nef in data %}
                     <h1>WELCOME!</h1>
-                    <h2>{{nef.firstname}}</h2>
+                    <h2>{{nef.name}}</h2>
                     <h4>Great day TUPcian! Here are the currect candidates!</h4>
                     {% endfor %}
                 </div>

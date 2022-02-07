@@ -1,24 +1,22 @@
 from django.shortcuts import redirect, render
-#from .forms import newregForm
-#import mysql.connector as sql
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from .models import newreg
 from .models import candidates
+from .models import comelecreg
 import mysql.connector as sql
 
 installed_apps = ['votingApp']
 
 # Create your views here.
-def index(request):
+def index(request):#login student
     return render(request, 'votingApp/index.html')
 
-def newreg1(request):
+def newreg1(request):# signup student
     return render(request, 'votingApp/newreg.html')
 
-
-# user registration
+# student registration
 def new(request):
     if request.method=='POST':
         name = request.POST.get('name')
@@ -26,11 +24,59 @@ def new(request):
         idno = request.POST.get('idno')
         password = request.POST.get('password')
         # confirm_password = request.POST.get('confirm_password'),
-        data = newreg.objects.create(firstname=name, email=email, idno=idno, password=password)
+        data = newreg.objects.create(name=name, email=email, idno=idno, password=password)
         data.save()
         return render(request, 'votingApp/index.html')
-    
-    
+
+
+
+def comeleclog(request):# comelec login
+    return render(request, 'votingApp/comelec_login.html')
+
+def regcomelec(request):# comelec signup
+    return render(request, 'votingApp/comelec_reg.html')
+
+
+# -------comelec registration
+def regcom(request):
+    if request.method=='POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        idno = request.POST.get('idno')
+        pas = request.POST.get('pas')
+        # cpassword = request.POST.get('cpassword'),
+        data = comelecreg.objects.create(name=name, email=email, idno=idno, password=pas)
+        data.save()
+        return render(request, 'votingApp/comelec_login.html')
+
+
+# ------comelec log in
+def comlog(request):
+    if request.method=="POST":
+        n=sql.connect(host="localhost",user="root",password="",database='vsdb')
+        cursor=n.cursor()
+        e=request.POST
+        for key,value in e.items():
+            if key=="email":
+                email=value
+            if key=="pass":
+                password=value
+        
+        l="select * from votingapp_comelecreg where email='{}' and password='{}'".format(email,password)
+        
+        cursor.execute(l)
+        h=tuple(cursor.fetchall())
+        if h==():
+            return render(request, 'votingApp/comeleclog.html')
+            
+        else:
+            data = comelecreg.objects.filter(email=email)
+          
+            return render(request, 'votingApp/comelec.html', {'data':data})
+
+    return render(request, 'votingApp/comeleclog.html')
+
+
 #     user login
 
 
@@ -66,10 +112,8 @@ def userlogin(request):
             return render(request, 'votingApp/homepage.html', {'data':data})
 
     return render(request, 'votingApp/index.html')
- 
-            
+         
 
-    
 #                  candidates
 
 

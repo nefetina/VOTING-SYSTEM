@@ -1,10 +1,11 @@
+from unicodedata import name
 from django.urls import path
 from django.conf import settings
 from . import views
 
 app_name = 'votingApp'
 
-urlpatterns = [
+urlpatterns =[ 
     path('', views.index, name='index'),
     path('newreg1/', views.newreg1, name='newreg1'),
     path('new/', views.new, name='new'),
@@ -15,4 +16,8 @@ urlpatterns = [
     path('peoples/', views.peoples, name='peoples'),
     path('delete/<int:id>', views.delete, name='delete'),
     path('userlogin/', views.userlogin, name='userlogin'),
+    path('comeleclog/', views.comeleclog, name='comeleclog'),
+    path('regcomelec/', views.regcomelec, name='regcomelec'),
+    path('regcom/', views.regcom, name='regcom'),
+    path('comlog/', views.comlog, name='comlog'),
 ]

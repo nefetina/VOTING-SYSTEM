@@ -74,7 +74,6 @@ form {
 }
 
 .kanan h1 {
-    margin-bottom: 50px;
     justify-self: center;
     color: white;
 }
@@ -117,7 +116,7 @@ p {
 }
 
 a {
-    margin-top: 10px;
+    margin-top: 5px;
     justify-self: center;
 }
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html> {%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMELEC REGISTRATION</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/newuser.css' %}">
+
+</head>
+
+<body>
+    <div class="kaliwa1">
+        <img src="{%static 'images/usg.png' %}" alt="aa">
+    </div>
+
+    <form action="/regcom/" method="post">
+        {% csrf_token %}
+        <div class="right">
+            <h1>COMELEC</h1>
+            <h1>REGISTRATION</h1>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Firstname Lastname" required>
+
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="mamamia.miamore@gsfe.tupcavite.edu.ph" required>
+
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="idno" id="idno" aria-describedby="emailHelp" placeholder="TUPC-XX-XXXX" required>
+
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="password form-control" name="pas" id="pas" aria-describedby="emailHelp" placeholder="Password" required>
+
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="password1 form-control" name="cpassword" id="cpassword" aria-describedby="emailHelp" placeholder="Confirm Password" required>
+
+            </div>
+
+
+
+            <button type="submit" id="pindot" class="thbtn">Sign Up</button>
+            <a type="button" id="aaa" href="{% url 'votingApp:index' %}">Student Log In</a>
+            <p>Already had an account?<a href="{% url 'votingApp:comeleclog' %}">Sign In</a></p>
+            
+
+        </div>
+
+    </form>
+
+    <script>
+        document.querySelector('.thbtn').onclick = function() {
+
+            var password = document.querySelector('.password').value,
+                password2 = document.querySelector('.password1').value;
+
+            if (password == "") {
+                alert("Field cannot be empty");
+            } else if (password != password2) {
+                alert("Password didn't match try again.");
+                document.querySelector('.password').value = '';
+                document.querySelector('.password1').value = '';
+
+                return false
+            }
+            return true
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,6 +1,8 @@
-{% load static %}
+
 
 <!DOCTYPE html>
+
+{% load static %}
 <html lang="en">
 
 <head>
@@ -8,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TUPC USG</title>
+    <title>COMELEC LOG IN</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{%static 'css/index.css'%}">
@@ -20,7 +22,7 @@
     <div class="kaliwa">
         <img src="{%static 'images/usg.png' %}" alt="usg">
     </div>
-    <form action="{% url 'votingApp:userlogin' %}" method="post">
+    <form action="/comlog/" method="post">
         {% csrf_token %}
         <div class="rect1">
 
@@ -28,7 +30,8 @@
 
         <div class="kanan">
             <div class="inner">
-                <h1>WELCOME</h1>
+                <h1>COMELEC</h1>
+                <h1>LOG IN </h1>
                 <div class="inputdiv">
                     <img src="{%static 'images/head.png' %}" alt="head">
                     <input type="email" name="email" id="email" placeholder="abc.def@gsfe.tupcavite.edu.ph">
@@ -37,10 +40,11 @@
                     <img src="{%static 'images/eye.png' %}" alt="aa">
                     <input type="password" name="pass" id="pass" placeholder="password">
                 </div>
+
                 <div class="btn">
                     <button id="bb" type="submit">LOG IN</button>
-                    <a href="{% url 'votingApp:newreg1' %}">SIGN UP</a>
-                    <a href="{% url 'votingApp:comeleclog' %}">COMELEC LOG IN</a>
+                    <a href="{% url 'votingApp:regcomelec' %}">SIGN UP</a>
+                    <a href="{% url 'votingApp:index' %}">LOG IN AS STUDENT</a>
                 </div>
             </div>
         </div>
