@@ -29,40 +29,41 @@
 
         </div>
     </div>
+    <form method='GET'>
+        <div class="mid">
+            <div class="table">
+                <table id="candidates" class="table d-print-table-cell">
+                    <thead>
+                        <tr>
+                            <th scope="col">Firstname</th>
+                            <th scope="col">Surname</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Course & Section</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Partylist</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for files in nef1 %}
+                        <tr>
+                            <td>{{files.firstname}}</td>
+                            <td>{{files.surname}}</td>
+                            <td>{{files.age}}</td>
+                            <td>{{files.course}}</td>
+                            <td>{{files.position}}</td>
+                            <td>{{files.partylist}}</td>
+                            <td><button class="delete"><a href="{% url 'votingApp:delete' files.id %}">Delete</a></button></td>
 
-    <div class="mid">
-        <div class="table">
-            <table id="candidates" class="table d-print-table-cell">
-                <thead>
-                    <tr>
-                        <th scope="col">Firstname</th>
-                        <th scope="col">Surname</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Course & Section</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Partylist</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for files in nef1 %}
-                    <tr>
-                        <td>{{files.firstname}}</td>
-                        <td>{{files.surname}}</td>
-                        <td>{{files.age}}</td>
-                        <td>{{files.course}}</td>
-                        <td>{{files.position}}</td>
-                        <td>{{files.partylist}}</td>
-                        <td><button class="delete"><a href="{% url 'votingApp:delete' files.id %}">Delete</a></button></td>
 
+                        </tr>
+                        {% endfor %}
 
-                    </tr>
-                    {% endfor %}
-
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+    </form>
 
    {% comment %}<div class="btns">
         <button id="b">REMOVE</button>

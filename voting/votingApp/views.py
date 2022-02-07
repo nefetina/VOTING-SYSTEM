@@ -67,12 +67,12 @@ def comlog(request):
         cursor.execute(l)
         h=tuple(cursor.fetchall())
         if h==():
-            return render(request, 'votingApp/comeleclog.html')
+            return render(request, 'votingApp/comelec_login.html')
             
         else:
             data = comelecreg.objects.filter(email=email)
           
-            return render(request, 'votingApp/comelec.html', {'data':data})
+            return redirect('/comelec', {'data':data})
 
     return render(request, 'votingApp/comeleclog.html')
 
@@ -132,7 +132,7 @@ def peoples(request):
         datas = candidates.objects.create(firstname=firstname, surname=surname, course=course, age=age, gender=gender, position=position, partylist=partylist, image=image, description=lala)
         datas.save()
     
-        return render(request, 'votingApp/homepage.html')
+        return redirect('/homepage')
     
     
 def delete(request, id):
