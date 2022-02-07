@@ -96,8 +96,6 @@ def delete(request, id):
     data.delete()
     return redirect('/comelec')
 
-
-
 def homepage(request):
     data = newreg.objects.all()
     return render(request, 'votingApp/homepage.html', {'data':data})
@@ -112,15 +110,6 @@ def comelec(request):
 def application(request):
     return render(request, 'votingApp/application.html')
 
-#function for newreg
-
-#def reguser(request):
-##   if form.is_valid():
- #       form.save()
-  
- #   context= {'form': form }
-        
- #   return render(request, 'votingApp/index.html', context)
 
 
 
