@@ -31,14 +31,14 @@
                 <h1>WELCOME</h1>
                 <div class="inputdiv">
                     <img src="{%static 'images/head.png' %}" alt="head">
-                    <input type="email" name="email" id="email" placeholder="abc.def@gsfe.tupcavite.edu.ph">
+                    <input type="email" name="email" id="email" class="email" placeholder="abc.def@gsfe.tupcavite.edu.ph">
                 </div>
                 <div class="inputdiv">
                     <img src="{%static 'images/eye.png' %}" alt="aa">
-                    <input type="password" name="pass" id="pass" placeholder="password">
+                    <input type="password" name="pass" id="pass" class="pass" placeholder="password">
                 </div>
                 <div class="btn">
-                    <button id="bb" type="submit">LOG IN</button>
+                    <button id="bb" class="tbtn" type="submit">LOG IN</button>
                     <a href="{% url 'votingApp:newreg1' %}">SIGN UP</a>
                     <a href="{% url 'votingApp:comeleclog' %}">COMELEC LOG IN</a>
                 </div>
@@ -49,6 +49,19 @@
 
         </div>
     </form>
+
+    <script>
+        document.querySelector('.tbtn').onclick = function() {
+
+            var password = document.querySelector('.email').value,
+                password2 = document.querySelector('.pass').value;
+
+            if (password == "") {
+                alert("Field cannot be empty");
+            } 
+            return true
+        }
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

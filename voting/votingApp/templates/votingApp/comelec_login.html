@@ -34,15 +34,15 @@
                 <h1>LOG IN </h1>
                 <div class="inputdiv">
                     <img src="{%static 'images/head.png' %}" alt="head">
-                    <input type="email" name="email" id="email" placeholder="abc.def@gsfe.tupcavite.edu.ph">
+                    <input type="email" name="email" id="email" class="email" placeholder="abc.def@gsfe.tupcavite.edu.ph">
                 </div>
                 <div class="inputdiv">
                     <img src="{%static 'images/eye.png' %}" alt="aa">
-                    <input type="password" name="pass" id="pass" placeholder="password">
+                    <input type="password" name="pass" id="pass" class="pass" placeholder="password">
                 </div>
 
                 <div class="btn">
-                    <button id="bb" type="submit">LOG IN</button>
+                    <button id="bb" type="submit" class="tbtn">LOG IN</button>
                     <a href="{% url 'votingApp:regcomelec' %}">SIGN UP</a>
                     <a href="{% url 'votingApp:index' %}">LOG IN AS STUDENT</a>
                 </div>
@@ -54,6 +54,18 @@
         </div>
     </form>
 
+    <script>
+        document.querySelector('.tbtn').onclick = function() {
+
+            var password = document.querySelector('.email').value,
+                password2 = document.querySelector('.pass').value;
+
+            if (password == "") {
+                alert("Field cannot be empty");
+            } 
+            return true
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
