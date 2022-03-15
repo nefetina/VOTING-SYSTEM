@@ -2,7 +2,7 @@
 body {
     width: 100%;
     height: 100vh;
-    display: grid;
+    display: flex;
     background-color: #661617;
 }
 
@@ -13,13 +13,13 @@ main {
 
 section {
     width: 95%;
-    display: grid;
+    display: flex;
     padding: 0 50px 0 50px;
 }
 
 .header {
     height: 200px;
-    display: flex;
+    display: grid;
     padding: 10px;
 }
 
@@ -39,6 +39,7 @@ section {
 
 .mid {
     width: 100%;
+    display: grid;
 }
 
 .carousel {
@@ -66,7 +67,7 @@ section {
 }
 
 .bttn {
-    display: flex;
+    display: grid;
     width: 100%;
     justify-content: center;
 }
