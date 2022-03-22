@@ -5,6 +5,13 @@ from django.contrib.auth import authenticate
 from .models import newreg
 from .models import candidates
 from .models import comelecreg
+from .models import president
+from .models import vicepresident
+from .models import secretary
+from .models import treasurer
+from .models import auditor
+from .models import senator
+from .models import governor
 import mysql.connector as sql
 
 installed_apps = ['votingApp']
@@ -160,3 +167,86 @@ def voting(request):
 def voting1(request):
     return render (request, 'votingApp/voting1.html')
 
+def president(request):
+    pres=president.objects.all
+    return render(request, "votingApp/voting.html",{"president":pres})
+
+def vicepresident(request):
+    vp=vicepresident.objects.all
+    return render(request, "votingApp/voting.html",{"vicepresident":vp})
+
+def secretary(request):
+    sec=secretary.objects.all
+    return render(request, "votingApp/voting.html",{"secretary":sec})
+
+def Asecretary(request):
+    asec=secretary.objects.all
+    return render(request, "votingApp/voting.html",{"secretary":asec})
+
+def treasurer(request):
+    trsr=treasurer.objects.all
+    return render(request, "votingApp/voting.html",{"treasurer":trsr})
+
+def auditor(request):
+    audit=auditor.objects.all
+    return render(request, "votingApp/voting.html",{"auditor":audit})
+
+def senator(request):
+    sen1=senator.objects.all
+    return render(request, "votingApp/voting1.html",{"senator":sen1})
+
+def senator1(request):
+    sen2=senator.objects.all
+    return render(request, "votingApp/voting1.html",{"senator1":sen2})
+
+def senator2(request):
+    sen3=senator.objects.all
+    return render(request, "votingApp/voting1.html",{"senator2":sen3})
+
+def senator3(request):
+    sen4=senator.objects.all
+    return render(request, "votingApp/voting1.html",{"senator3":sen4})
+
+def senator4(request):
+    sen5=senator.objects.all
+    return render(request, "votingApp/voting1.html",{"senator4":sen5})
+
+def governor(request):
+    gov1=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor":gov1})
+
+def governor1(request):
+    gov2=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor1":gov2})
+
+def governor2(request):
+    gov3=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor2":gov3})
+
+def governor3(request):
+    gov4=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor3":gov4})
+
+def governor4(request):
+    gov5=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor4":gov5})
+
+def governor5(request):
+    gov6=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor5":gov6})
+
+def governor6(request):
+    gov7=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor6":gov7})
+
+def governor7(request):
+    gov8=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor7":gov8})
+
+def governor8(request):
+    gov9=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor8":gov9})
+
+def governor9(request):
+    gov0=governor.objects.all
+    return render(request, "votingApp/voting1.html",{"governor9":gov0})

@@ -27,25 +27,25 @@
                 <div class="column">
                     <label class="col-2 col-form-label" for="president">PRESIDENT</label>
                     <select class="form-control" name="president" id="president">
-                        <!--{% for ?? %}-->
-                        <option value="{{ ?? }}">{{ ?? }}</option>
-                        <!--{% endfor %}-->
+                        {% for pres in president%}
+                        <option value="{{ pres.id}}">{{ pres.name}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="column">
                     <label class="col-2 col-form-label" for="vice">VICE&nbsp;PRESIDENT</label>
                     <select class="form-control" name="vice" id="vice">
-                        <!--{% for ?? %}-->
-                    <option value="{{ ?? }}">{{ ?? }}</option>
-                        <!--{% endfor %}-->
+                        {% for vp in vicepresident %}
+                    <option value="{{ vp.id}}">{{ vp.name}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="column">
                     <label class="col-2 col-form-label" for="secretary">SECRETARY</label>
                     <select class="form-control" name="secretary" id="secretary">
-                        <!--{% for ?? %}-->
-                    <option value="{{ ?? }}">{{ ?? }}</option>
-                        <!--{% endfor %}-->
+                        {% for sec in secretary%}
+                    <option value="{{ sec.id}}">{{ sec.name}}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
@@ -53,25 +53,25 @@
                 <div class="column">
                     <label class="col-2 col-form-label" for="a_secretary">ASSIT.SECRETARY</label>
                     <select class="form-control" name="a_secretary" id="a_secretary">
-                        <!--{% for ?? %}-->
-                    <option value="{{ ?? }}">{{ ?? }}</option>
-                        <!--{% endfor %}-->
+                        {% for asec in Asecretary %}
+                    <option value="{{ asec.id}}">{{ asec.name}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="column">
                     <label class="col-2 col-form-label" for="treasurer">TREASURER</label>
                     <select class="form-control" name="treasurer" id="treasurer">
-                        <!--{% for ?? %}-->
-                    <option value="{{ ?? }}">{{ ?? }}</option>
-                        <!--{% endfor %}-->
+                        {% for trsr in treasurer %}
+                    <option value="{{ trsr.id}}">{{ trsr.name}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="column">
                     <label class="col-2 col-form-label" for="auditor">AUDITOR</label>
                     <select class="form-control" name="auditor" id="auditor">
-                        <!--{% for ?? %}-->
-                    <option value="{{ ?? }}">{{ ?? }}</option>
-                        <!--{% endfor %}-->
+                        {% for audit in auditor %}
+                    <option value="{{ audit.id}}">{{ audit.name}}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>

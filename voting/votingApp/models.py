@@ -44,5 +44,43 @@ class candidates(models.Model):
 
 #elec yr,
 class president(models.Model):
-    date = models.DateField()
-    
+    name = models.CharField(max_length=30)
+   
+    def __str__(self):
+        return self.name
+
+class vicepresident(models.Model):
+    name = models.CharField(max_length=30)
+   
+    def __str__(self):
+        return self.name
+
+class secretary(models.Model):
+    name = models.CharField(max_length=30)
+   
+    def __str__(self):
+        return self.name
+
+class treasurer(models.Model):
+    name = models.CharField(max_length=30)
+   
+    def __str__(self):
+        return self.name
+
+class auditor(models.Model):
+    name = models.CharField(max_length=30)
+   
+    def __str__(self):
+        return self.name
+
+class senator(models.Model):
+    name = models.CharField(max_length=30)
+   
+    def __str__(self):
+        return self.name
+
+class governor(models.Model):
+    name = models.CharField(max_length=30)
+   
+    def __str__(self):
+        return self.name
