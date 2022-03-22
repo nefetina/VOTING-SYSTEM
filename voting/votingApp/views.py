@@ -154,6 +154,9 @@ def comelec(request):
 def application(request):
     return render(request, 'votingApp/application.html')
 
+def voting(request):
+    return render(request, 'votingApp/voting.html')
 
-
+def voting1(request):
+    return render (request, 'votingApp/voting1.html')
 

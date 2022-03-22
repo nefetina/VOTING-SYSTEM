@@ -20,4 +20,6 @@ urlpatterns =[
     path('regcomelec/', views.regcomelec, name='regcomelec'),
     path('regcom/', views.regcom, name='regcom'),
     path('comlog/', views.comlog, name='comlog'),
+    path('voting/', views.voting, name='voting'),
+    path('voting1/', views.voting1, name='voting1'),
 ]
