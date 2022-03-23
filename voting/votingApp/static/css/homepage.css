@@ -2,7 +2,7 @@
 body {
     width: 100%;
     height: 100vh;
-    display: flex;
+    display: grid;
     background-color: #661617;
 }
 
@@ -14,69 +14,71 @@ main {
 section {
     width: 95%;
     display: flex;
-    padding: 0 50px 0 50px;
+    padding: 0 50px 0 0;
 }
 
 .header {
-    height: 200px;
     display: grid;
     padding: 10px;
+    width: 25%;
+    background-color: #363636;
+    justify-content: center;
+}
+
+.bttn {
+    display: grid;
+    margin: 10px 0 0 0;
 }
 
 .aa {
-    padding: 10px;
+    padding: 15px;
+    align-items: center;
+}
+
+h3 {
+    justify-self: center;
+    padding: 10px 0 0 0;
+    color: white;
 }
 
 .aa img {
     height: 150px;
 }
 
+.last {
+    display: grid;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .b {
-    padding: 10px;
     font-family: 'Saira', sans-serif;
     color: white;
+    padding: 10px;
 }
 
 .mid {
     width: 100%;
     display: grid;
+    margin: 25px 0 25px 30px;
 }
 
 .carousel {
-    height: 350px;
+    height: 600px;
     width: 100%;
 }
 
 .carousel-item,
 .carousel-inner {
-    height: 350px;
+    height: 550px;
     width: 100%;
-    align-content: center;
+    padding: 10px;
 }
 
 .carousel-item img {
-    height: 100%;
-    width: 1020px;
-    margin-left: 335px;
-}
-
-.btns {
-    display: grid;
+    height: 550px;
     width: 100%;
-    justify-content: center;
-}
-
-.bttn {
-    display: grid;
-    width: 100%;
-    justify-content: center;
-}
-
-.bttn button {
-    width: 400px;
-    height: 60px;
-    border-radius: 10px;
-    margin: 20px 100px 20px 100px;
 }
 
 #b:hover {
@@ -91,15 +93,15 @@ section {
 
 a:link,
 a:visited {
-    width: 400px;
+    width: 100%;
     height: 60px;
-    margin: 20px 100px 20px 100px;
     background-color: white;
     color: black;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
     padding: 17px;
+    margin: 10px 0 10px 0;
 }
 
 a:hover,
@@ -107,14 +109,33 @@ a:active {
     background-color: gray;
 }
 
+.last {
+    display: flex;
+}
+
+#link {
+    background-color: #363636;
+    color: white;
+}
+
+#link img {
+    height: 30px;
+    margin: 0 5px 2px 0;
+}
+
+#link:hover,
+#link:active {
+    color: aqua;
+}
+
 .aside {
     justify-content: center;
     display: grid;
     font-family: 'Saira', sans-serif;
-    font-size: 40pt;
-    width: 5%;
+    font-size: 37pt;
+    width: 7%;
     background-color: #c4c4c4;
-    margin: 0 50px 0 0;
+    padding: 1px;
 }
 
 @media only screen and (max-width:1200px) {
@@ -126,46 +147,45 @@ a:active {
     }
     main {
         width: 100%;
-        display: grid;
+        display: flex;
     }
     section {
+        border: #c4c4c4 solid 1px;
         width: 100%;
+        display: flex;
+    }
+    .header {
         display: grid;
+        width: 100%;
+        background-color: transparent;
     }
     .carousel {
-        height: 350px;
+        height: 600px;
         width: 100%;
-        padding: 1%;
     }
     .carousel-item,
     .carousel-inner {
-        height: 350px;
+        height: auto;
         width: 100%;
-        align-content: center;
     }
     .carousel-item img {
-        height: 100%;
-        width: 450px;
-        margin-left: 160px;
+        height: 500px;
+        width: 100%;
     }
     .aside {
         display: none;
     }
     .bttn {
-        width: 50px;
-        display: grid;
-    }
-    .btns {
         display: grid;
     }
     .mid {
+        display: grid;
         width: 100%;
-        padding: 10px;
-    }
-    .aa {
-        padding: 10px;
     }
     .aa img {
-        height: 100px;
+        height: 150px;
+    }
+    #link {
+        display: none;
     }
 }
