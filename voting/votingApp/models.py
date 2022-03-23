@@ -32,7 +32,7 @@ class candidates(models.Model):
         ('MALE', 'MALE'),
     ]
 
-    firstname = models.CharField(max_length=15, null=False)
+    name = models.CharField(max_length=15, null=False)
     surname = models.CharField(max_length=15,null=False)
     course = models.CharField(max_length=15, null=False)
     age = models.IntegerField(null=False)
@@ -84,3 +84,4 @@ class governor(models.Model):
    
     def __str__(self):
         return self.name
+
