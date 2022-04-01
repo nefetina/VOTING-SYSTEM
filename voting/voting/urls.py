@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('votingApp.urls')),
+    path('', include('django.contirb.urls')).
     path('admin/', admin.site.urls),
 ]

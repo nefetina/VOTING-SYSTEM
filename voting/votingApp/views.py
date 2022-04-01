@@ -141,7 +141,7 @@ def peoples(request):
     
         return redirect('/homepage')
     
-    
+
 def delete(request, id):
     data = candidates.objects.get(id=id)
     data.delete()
