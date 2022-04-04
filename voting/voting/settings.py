@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'voting.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vsdb',
+        'NAME': 'voting',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': '',

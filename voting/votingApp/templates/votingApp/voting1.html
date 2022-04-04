@@ -29,39 +29,44 @@
                 <div class="aa">
                     <div class="column">
                         <select class="form-control" name="senator1" id="senator1">
-                        {% for sen1 in senator %}
-                        <option value="{{ sen1.id}}">{{ sen1.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.senator}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column">
                         <select class="form-control" name="senator2" id="senator2">
-                        {% for sen2 in senator1 %}
-                        <option value="{{ sen2.id}}">{{ sen2.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{option.senator}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column">
                         <select class="form-control" name="senator3" id="senator3">
-                        {% for sen3 in senator2 %}
-                        <option value="{{ sen3.id}}">{{ sen3.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.senator}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="column">
                         <select class="form-control" name="senator4" id="senator4">
-                        {% for sen4 in senator3 %}
-                        <option value="{{ sen4.id}}">{{ sen4.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.senator}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column">
                         <select class="form-control" name="senator5" id="senator5">
-                        {% for sen5 in senator4 %}
-                        <option value="{{ sen5.id}}">{{ sen5.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.senator}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                 </div>
@@ -71,72 +76,82 @@
                 <div class="aaa">
                     <div class="column0">
                         <select class="form-control" name="governor" id="governor">
-                        {% for gov1 in governor %}
-                        <option value="{{ gov1.id}}">{{ gov1.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column0">
                         <select class="form-control" name="governor1" id="governor1">
-                        {% for gov2 in governor1 %}
-                        <option value="{{ gov2.id}}">{{ gov2.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column0">
-                        {% for gov3 in governor2 %}
-                        <option value="{{ gov3.id}}">{{ gov3.name}}</option>
-                        {% endfor %}
+                        <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column0">
                         <select class="form-control" name="governor3" id="governor3">
-                        {% for gov4 in governor3 %}
-                        <option value="{{ gov4.id}}">{{ gov4.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column0">
                         <select class="form-control" name="governor4" id="governor4">
-                        {% for gov5 in governor4 %}
-                        <option value="{{ gov5.id}}">{{ gov5.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                 </div>
                 <div class="aaa">
                     <div class="column0">
                         <select class="form-control" name="governor5" id="governor5">
-                        {% for gov6 in governor5 %}
-                        <option value="{{ gov6.id}}">{{ gov6.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column0">
                         <select class="form-control" name="governor6" id="governor6">
-                        {% for gov7 in governor6 %}
-                        <option value="{{ gov7.id}}">{{ gov7.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column0">
                         <select class="form-control" name="governor8" id="governor8">
-                        {% for gov8 in governor7 %}
-                        <option value="{{ gov8.id}}">{{ gov8.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column0">
-                        {% for gov9 in governor8 %}
-                        <option value="{{ gov9.id}}">{{ gov9.name}}</option>
-                        {% endfor %}
+                        <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                     <div class="column0">
                         <select class="form-control" name="governor7" id="governor7">
-                        {% for gov0 in governor9 %}
-                        <option value="{{ gov0.id}}">{{ gov0.name}}</option>
-                        {% endfor %}
+                            <option>--SELECT ONE--</option>
+                            {% for option in candidates%}
+                            <option>{{ option.governor}}</option>
+                            {% endfor %}
                     </select>
                     </div>
                 </div>
