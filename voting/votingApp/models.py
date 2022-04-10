@@ -1,4 +1,4 @@
-
+from django.contrib.auth.models import AbstractUser
 from pyexpat import model
 from django import db
 from django.db import models
@@ -13,12 +13,14 @@ def filename(request, filename):
     filename = "%s%s", (timenow, old_filename)
     return os.path.join('uploads/', filename)
 
-class newreg(models.Model):
-    name = models.CharField(max_length=15, null=False)
+class registration(AbstractUser):
+    userType = [
+        ('STDNT', 'Student'),
+        ('COMSELEC', 'Comelec'),
+    ]
     idno = models.CharField(max_length=15, null=False)
-    email = models.EmailField(max_length=50, null=False)
-    password = models.CharField(max_length=15,null=False)
-    usertype = models.CharField(max_length=15,null=False) 
+    userType = models.CharField(max_length=30, choices= userType, verbose_name='userType', default ='STDNT')
+    
 
 #table + status voting  
 

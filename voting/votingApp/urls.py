@@ -7,8 +7,8 @@ app_name = 'votingApp'
 
 urlpatterns =[ 
     path('', views.index, name='index'),
+    path('index/', views.index, name='index'),
     path('newreg1/', views.newreg1, name='newreg1'),
-    path('new/', views.new, name='new'),
     path('homepage/', views.homepage, name='homepage'),
     path('application/', views.application, name='application'),
     path('result/', views.result, name='result'),
@@ -21,5 +21,5 @@ urlpatterns =[
     path('regcom/', views.regcom, name='regcom'),
     path('comlog/', views.comlog, name='comlog'),
     path('voting/', views.voting, name='voting'),
-    path('voting1/', views.voting1, name='voting1'),
+    path('vote/', views.vote, name='vote'),
 ]

@@ -1,12 +1,15 @@
 from multiprocessing import context
+from tokenize import Comment
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from .models import newreg
+from django.contrib.auth.forms import UserCreationForm
+from .forms import StudentRegistration
 from .models import candidates
 from .models import vote
 import mysql.connector as sql
+
 
 installed_apps = ['votingApp']
 
@@ -14,21 +17,15 @@ installed_apps = ['votingApp']
 def index(request):#login student
     return render(request, 'votingApp/index.html')
 
-def newreg1(request):# signup student
-    return render(request, 'votingApp/newreg.html')
-
-# student registration
-def new(request):
-    if request.method=='POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        idno = request.POST.get('idno')
-        password = request.POST.get('password')
-        # confirm_password = request.POST.get('confirm_password'),
-        data = newreg.objects.create(name=name, email=email, idno=idno, password=password)
-        data.save()
-        return render(request, 'votingApp/index.html')
-
+def newreg1(request):# student registration
+    form = StudentRegistration()
+    if request.method == 'POST':
+        form = StudentRegistration(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect ('/index')
+    context =  {'form': form }
+    return render(request, 'votingApp/newreg.html', context)
 
 
 def comeleclog(request):# comelec login
@@ -147,12 +144,38 @@ def application(request):
 def voting(request):
     option = candidates.objects.filter(position='President')
     option1 = candidates.objects.filter(position='Vicepresident')
+    option2 = candidates.objects.filter(position='Secretary')
+    option3 = candidates.objects.filter(position='Asec')
+    option4 = candidates.objects.filter(position='Auditor')
+    option5 = candidates.objects.filter(position='Treasurer')
+    option6 = candidates.objects.filter(position='Senator')
+    option7 = candidates.objects.filter(position='Governor')
     context = {
         'option':option,
         'option1':option1,
+        'option2':option2,
+        'option3':option3,
+        'option4':option4,
+        'option5':option5,
+        'option6':option6,
+        'option7':option7,
     }
     return render(request, 'votingApp/voting.html', context)
 
-def voting1(request):
-    return render (request, 'votingApp/voting1.html')
+def vote(request):
+    if request.method == 'POST':
+        president = request.POST.get('president')
+        vicepresident = request.POST.get('vice')
+        secretary = request.POST.get('secretary')
+        asec = request.POST.get('asec')
+        treasurer = request.POST.get('treasurer')
+        auditor = request.POST.get('auditor')
+        
+
+        voted = vote.objects.create(president=president, vicepresident=vicepresident, secretary=secretary, asec=asec, treasurer=treasurer, auditor=auditor)
+        voted.save()
+
+        return redirect ('homepage/')
+
+
 

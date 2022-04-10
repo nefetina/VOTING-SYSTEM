@@ -22,9 +22,13 @@
         </div>
     </div>
     <div class="middle">
-        <form method="POST">
-            <div class="una">
-                <div class="column">
+        <form method="POST" action="/vote/">
+            {%csrf_token%}
+            <div>
+                <input type="text">Type your ID: TUPC-XX-XXXX</input>
+            </div>
+            <div class="row">
+                <div class="row1">
                     <label class="col-2 col-form-label" for="president">PRESIDENT</label>
                     <select class="form-control" name="president" id="president">
                         <option>--SELECT ONE--</option>
@@ -33,7 +37,7 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="column">
+                <div class="row1">
                     <label class="col-2 col-form-label" for="vice">VICE&nbsp;PRESIDENT</label>
                     <select class="form-control" name="vice" id="vice">
                         <option>--SELECT ONE--</option>
@@ -42,48 +46,185 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="column">
+                <div class="row1">
                     <label class="col-2 col-form-label" for="secretary">SECRETARY</label>
                     <select class="form-control" name="secretary" id="secretary">
                         <option>--SELECT ONE--</option>
-                        {% for option in candidates%}
-                        <option>{{ option.secretary}}</option>
+                        {% for o in option2%}
+                        <option>{{ o.name}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
                 </div>
             </div>
-            <div class="una">
-                <div class="column">
-                    <label class="col-2 col-form-label" for="a_secretary">ASSIT.SECRETARY</label>
-                    <select class="form-control" name="a_secretary" id="a_secretary">
+            <div class="row">
+                <div class="row1">
+                    <label class="col-2 col-form-label" for="asec">SECRETARY</label>
+                    <select class="form-control" name="asec" id="asec">
                         <option>--SELECT ONE--</option>
-                        {% for option in candidates%}
-                        <option>{{ option.asec}}</option>
+                        {% for o in option3%}
+                        <option>{{ o.name}} {{o.surname}}</option>
                         {% endfor %}
+                    </select>
                 </div>
-                <div class="column">
+                <div class="row1">
                     <label class="col-2 col-form-label" for="treasurer">TREASURER</label>
                     <select class="form-control" name="treasurer" id="treasurer">
                         <option>--SELECT ONE--</option>
-                        {% for option in candidates%}
-                        <option>{{ option.treasurer}}</option>
+                        {% for o in option4%}
+                        <option>{{ o.name}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
                 </div>
-                <div class="column">
+                <div class="row1">
                     <label class="col-2 col-form-label" for="auditor">AUDITOR</label>
                     <select class="form-control" name="auditor" id="auditor">
                         <option>--SELECT ONE--</option>
-                        {% for option in candidates%}
-                        <option>{{ option.auditor}}</option>
+                        {% for o in option5%}
+                        <option>{{ o.name}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
+                </div>
+            </div>
+            <h3>SENATOR</h3>
+            <div class="una">
+                <div class="aa">
+                    <div class="column">
+                        <select class="form-control" name="senator1" id="senator1">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option6%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column">
+                        <select class="form-control" name="senator2" id="senator2">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option6%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column">
+                        <select class="form-control" name="senator3" id="senator3">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option6%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="column">
+                        <select class="form-control" name="senator4" id="senator4">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option6%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column">
+                        <select class="form-control" name="senator5" id="senator5">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option6%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <h3>GOVERNORS</h3>
+            <div class="una">
+                <div class="aaa">
+                    <div class="column0">
+                        <select class="form-control" name="governor" id="governor">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column0">
+                        <select class="form-control" name="governor1" id="governor1">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column0">
+                        <select class="form-control" name="governor2" id="governor2">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column0">
+                        <select class="form-control" name="governor3" id="governor3">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column0">
+                        <select class="form-control" name="governor4" id="governor4">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                </div>
+                <div class="aaa">
+                    <div class="column0">
+                        <select class="form-control" name="governor5" id="governor5">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column0">
+                        <select class="form-control" name="governor6" id="governor6">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column0">
+                        <select class="form-control" name="governor7" id="governor7">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column0">
+                        <select class="form-control" name="governor8" id="governor8">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                    <div class="column0">
+                        <select class="form-control" name="governor9" id="governor9">
+                            <option>--SELECT ONE--</option>
+                            {% for o in option7%}
+                            <option>{{ o.name}} {{o.surname}}</option>
+                            {% endfor %}
+                    </select>
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="submit" id="subbtn">SUBMIT</button>
                 </div>
             </div>
         </form>
     </div>
     <div class="last">
-        <a id="b" href="{% url 'votingApp:voting1' %}">NEXT</a>
         <a id="b" href="{% url 'votingApp:homepage' %}">CANCEL</a>
     </div>
 

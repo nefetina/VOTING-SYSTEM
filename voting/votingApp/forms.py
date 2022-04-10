@@ -2,15 +2,9 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
-from .models import newreg
+from .models import registration
 
-
-class newregForm(forms.ModelForm):
+class StudentRegistration(UserCreationForm):
     class Meta:
-        model= newreg
-        fields= ["firstname","idno", "email", "password", "confirm_passsword"]	
-
-class CreateUserForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        model = registration
+        fields = ['username', 'email', 'password1', 'password2', 'last_name', 'first_name', 'idno']
