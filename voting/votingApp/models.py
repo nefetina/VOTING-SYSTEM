@@ -1,8 +1,7 @@
+from enum import auto
+from pickle import TRUE
 from django.contrib.auth.models import AbstractUser
-from pyexpat import model
-from django import db
 from django.db import models
-from django.db import connections
 import datetime
 import os
 
@@ -18,11 +17,9 @@ class registration(AbstractUser):
         ('STDNT', 'Student'),
         ('COMSELEC', 'Comelec'),
     ]
-    idno = models.CharField(max_length=15, null=False)
+    idno = models.CharField(max_length=15, verbose_name='idno', null=False, primary_key=True)
     userType = models.CharField(max_length=30, choices= userType, verbose_name='userType', default ='STDNT')
-    
-
-#table + status voting  
+    status = models.CharField(max_length=30, verbose_name='status', default='NOT VOTED')
 
 class candidates(models.Model):
     gender = [
@@ -39,7 +36,7 @@ class candidates(models.Model):
         ('SENATOR','SENATOR'),
         ('GOVERNOR','GOVERNOR'),
     ]
-    name = models.CharField(max_length=15, null=False)
+    firstname = models.CharField(max_length=15, null=False)
     surname = models.CharField(max_length=15,null=False)
     course = models.CharField(max_length=15, null=False)
     age = models.IntegerField(null=False)
@@ -51,15 +48,30 @@ class candidates(models.Model):
 
 #elec yr,
 class vote(models.Model):
-    voter = models.CharField(max_length=30)
+    idno = models.ForeignKey(registration, on_delete=models.CASCADE, related_name='ids', verbose_name = 'idno')
+    date = models.DateField(auto_now_add = True)
     president = models.CharField(max_length=30)
     vicepresident = models.CharField(max_length=30)
     secretary = models.CharField(max_length=30)
     asec = models.CharField(max_length=30)
     treasurer = models.CharField(max_length=30)
     auditor = models.CharField(max_length=30)
-    senator = models.CharField(max_length=30)
+    senator1 = models.CharField(max_length=30)
+    senator2 = models.CharField(max_length=30)
+    senator3 = models.CharField(max_length=30)
+    senator4 = models.CharField(max_length=30)
+    senator5 = models.CharField(max_length=30)
+    senator6 = models.CharField(max_length=30)
     governor = models.CharField(max_length=30)
+    governor1 = models.CharField(max_length=30)
+    governor2 = models.CharField(max_length=30)
+    governor3 = models.CharField(max_length=30)
+    governor4 = models.CharField(max_length=30)
+    governor5 = models.CharField(max_length=30)
+    governor6 = models.CharField(max_length=30)
+    governor7 = models.CharField(max_length=30)
+    governor8 = models.CharField(max_length=30)
+    governor9 = models.CharField(max_length=30)
 
 
 

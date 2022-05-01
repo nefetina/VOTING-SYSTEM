@@ -10,6 +10,14 @@ body {
     display: flex;
 }
 
+#hh {
+    background-color: gray;
+}
+
+#result {
+    background-color: white;
+}
+
 .b {
     background-color: grey;
     width: 100%;

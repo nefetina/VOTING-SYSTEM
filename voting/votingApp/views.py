@@ -1,13 +1,10 @@
 from multiprocessing import context
-from tokenize import Comment
 from django.shortcuts import redirect, render
-from django.contrib.auth.models import User, auth
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .forms import StudentRegistration
-from .models import candidates
-from .models import vote
+from .models import candidates, vote, registration
 import mysql.connector as sql
 
 
@@ -15,7 +12,24 @@ installed_apps = ['votingApp']
 
 # Create your views here.
 def index(request):#login student
-    return render(request, 'votingApp/index.html')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None and user.userType == 'STDNT':
+            login(request, user)
+            return redirect('/homepage')
+
+        elif user is not None and user.userType == 'COMSELEC':
+            login(request, user)
+            return redirect('/comelec')
+        
+        else:
+            messages.info(request, 'INVALID CREDENTIALS')
+
+    return render (request, 'votingApp/index.html')
 
 def newreg1(request):# student registration
     form = StudentRegistration()
@@ -26,83 +40,6 @@ def newreg1(request):# student registration
             return redirect ('/index')
     context =  {'form': form }
     return render(request, 'votingApp/newreg.html', context)
-
-
-def comeleclog(request):# comelec login
-    return render(request, 'votingApp/comelec_login.html')
-
-def regcomelec(request):# comelec signup
-    return render(request, 'votingApp/comelec_reg.html')
-
-
-# -------comelec registration
-def regcom(request):
-    if request.method=='POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        idno = request.POST.get('idno')
-        pas = request.POST.get('pas')
-        # cpassword = request.POST.get('cpassword'),
-        data = newreg.objects.create(name=name, email=email, idno=idno, password=pas)
-        data.save()
-        return render(request, 'votingApp/comelec_login.html')
-
-
-# ------comelec log in
-def comlog(request):
-    if request.method=="POST":
-        n=sql.connect(host="localhost",user="root",password="",database='voting')
-        cursor=n.cursor()
-        e=request.POST
-        for key,value in e.items():
-            if key=="email":
-                email=value
-            if key=="pass":
-                password=value
-        
-        l="select * from votingapp_comelecreg where email='{}' and password='{}'".format(email,password)
-        
-        cursor.execute(l)
-        h=tuple(cursor.fetchall())
-        if h==():
-            return render(request, 'votingApp/comelec_login.html')
-            
-        else:
-            data = newreg.objects.filter(email=email)
-          
-            return redirect('/comelec', {'data':data})
-
-    return render(request, 'votingApp/comeleclog.html')
-
-
-def userlogin(request):
-    if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",password="",database='voting')
-        cursor=m.cursor()
-        d=request.POST
-        for key,value in d.items():
-            if key=="email":
-                email=value
-            if key=="pass":
-                password=value
-        
-        c="select * from votingapp_newreg where email='{}' and password='{}'".format(email,password)
-        
-        cursor.execute(c)
-        t=tuple(cursor.fetchall())
-        if t==():
-            return render(request, 'votingApp/index.html')
-            
-        else:
-            data = newreg.objects.filter(email=email)
-          
-            return render(request, 'votingApp/homepage.html', {'data':data})
-
-    return render(request, 'votingApp/index.html')
-         
-
-#                  candidates
-
 
 def peoples(request):
     if request.method=='POST':
@@ -116,7 +53,7 @@ def peoples(request):
         image=request.POST.get('image')
         lala=request.POST.get('lala')
         
-        datas = candidates.objects.create(name=firstname, surname=surname, course=course, age=age, gender=gender, position=position, partylist=partylist, image=image, description=lala)
+        datas = candidates.objects.create(firstname=firstname, surname=surname, course=course, age=age, gender=gender, position=position, partylist=partylist, image=image, description=lala)
         datas.save()
     
         return redirect('/homepage')
@@ -127,21 +64,35 @@ def delete(request, id):
     data.delete()
     return redirect('/comelec')
 
+@login_required(login_url='/index')
 def homepage(request):
-    data = newreg.objects.all()
-    return render(request, 'votingApp/homepage.html', {'data':data})
+    if request.user.is_authenticated and request.user.userType == 'STDNT':
+        data = registration.objects.filter(idno = request.user.pk)
+        context = { 'data': data}
+        return render(request, 'votingApp/homepage.html', context)
+    return redirect('/index')
 
+@login_required(login_url='/index')
 def result(request):
-    return render(request, 'votingApp/result.html')
+    if request.user.is_authenticated and request.user.userType == 'STDNT':
+        return render(request, 'votingApp/result.html')
+    return redirect('/index')
 
+@login_required(login_url='/index')
 def comelec(request):
-    nef1 = candidates.objects.all()
-    return render(request, 'votingApp/comelec.html', {'nef1':nef1})
+    if request.user.is_authenticated and request.user.userType == 'COMSELEC':
+        return render(request, 'votingApp/comelec.html' )
+    return redirect('/index')
 
+@login_required(login_url='/index')
 def application(request):
-    return render(request, 'votingApp/application.html')
-
+    if request.user.is_authenticated and request.user.userType == 'STDNT':
+        return render(request, 'votingApp/application.html')
+    return redirect('/index')
+    
 def voting(request):
+    data = registration.objects.filter(idno = request.user.pk)
+    print(data)
     option = candidates.objects.filter(position='President')
     option1 = candidates.objects.filter(position='Vicepresident')
     option2 = candidates.objects.filter(position='Secretary')
@@ -159,23 +110,45 @@ def voting(request):
         'option5':option5,
         'option6':option6,
         'option7':option7,
+        'data': data
     }
     return render(request, 'votingApp/voting.html', context)
 
-def vote(request):
+def votinga(request):
     if request.method == 'POST':
+        idno_id = request.POST.get('idno_id')
         president = request.POST.get('president')
         vicepresident = request.POST.get('vice')
         secretary = request.POST.get('secretary')
         asec = request.POST.get('asec')
         treasurer = request.POST.get('treasurer')
         auditor = request.POST.get('auditor')
-        
+        senator1 = request.POST.get('senator1')
+        senator2 = request.POST.get('senator2')
+        senator3 = request.POST.get('senator3')
+        senator4 = request.POST.get('senator4')
+        senator5 = request.POST.get('senator5')
+        senator6 = request.POST.get('senator6')
+        governor = request.POST.get('governor')
+        governor1 = request.POST.get('governor1')
+        governor2 = request.POST.get('governor2')
+        governor3 = request.POST.get('governor3')
+        governor4 = request.POST.get('governor4')
+        governor5 = request.POST.get('governor5')
+        governor6 = request.POST.get('governor6')
+        governor7 = request.POST.get('governor7')
+        governor8 = request.POST.get('governor8')
+        governor9 = request.POST.get('governor9')
 
-        voted = vote.objects.create(president=president, vicepresident=vicepresident, secretary=secretary, asec=asec, treasurer=treasurer, auditor=auditor)
-        voted.save()
+        votes = vote.objects.create(idno_id=idno_id, president=president, vicepresident=vicepresident,secretary=secretary, asec=asec, treasurer=treasurer, auditor=auditor, senator1=senator1, senator2=senator2, senator3=senator3, senator4=senator4, senator5=senator5, senator6=senator6, governor=governor, governor1=governor1, governor2=governor2, governor3=governor3, governor4=governor4, governor5=governor5, governor6=governor6, governor7=governor7, governor8=governor8, governor9=governor9)
+        votes.save()
 
-        return redirect ('homepage/')
+        ids = registration.objects.get(idno = request.user.pk)
+        ids.status = 'VOTED'
+        ids.save()
+        return redirect ('/homepage')
 
-
+def logoutUser(request):
+    logout(request)
+    return redirect('/index')
 

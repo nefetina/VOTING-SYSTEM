@@ -27,36 +27,25 @@
 
     <div class="res">
         <div class="pers">
-            <div class="sekand">
-                <img src="{%static 'images/result.png' %}" id="a" alt="a">
-                <label for="a">PRESIDENT</label>
-            </div>
-            <div class="sekand">
-                <img src="{%static 'images/result.png' %}" id="b" alt="a">
-                <label for="b">VICE PRESIDENT</label>
-            </div>
-
-            <div class="sekand">
-                <img src="{%static 'images/result.png' %}" id="c" alt="a">
-                <label for="c">SECRETARY</label>
-            </div>
-            <div class="sekand">
-                <img src="{%static 'images/result.png' %}" id="d" alt="a">
-                <label for="d">AUDITOR</label>
-            </div>
-        </div>
-
-        <div class="pers">
-            <div class="sekand">
-                <img src="{%static 'images/result.png' %}" id="e" alt="a">
-                <label for="e">SENATORIAL POSITION</label>
-            </div>
-            <div class="sekand">
-                <img src="{%static 'images/result.png' %}" id="f" alt="a">
-                <label for="f">GOVERNATORIAL POSITION</label>
+            <div class="table">
+                <table id="result" class="table table-hover">
+                    <thead id="hh">
+                        <tr>
+                            <th scope="col">NAME</th>
+                            <th scope="col">POSITION</th>
+                            <th scope="col">VOTE COUNT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>CANDIDATE</td>
+                          <td>POSITION</td>
+                          <td>00</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
     <div class="last">
         <a type="button" href="{% url 'votingApp:homepage' %}" id="button">HOME</a>

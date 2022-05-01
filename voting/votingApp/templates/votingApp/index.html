@@ -20,27 +20,24 @@
     <div class="kaliwa">
         <img src="{%static 'images/usg.png' %}" alt="usg">
     </div>
-    <form action="{% url 'votingApp:userlogin' %}" method="post">
-        {% csrf_token %}
+    <form method="post">
         <div class="rect1">
-
         </div>
-
         <div class="kanan">
             <div class="inner">
                 <h1>WELCOME</h1>
+                {% csrf_token %}
                 <div class="inputdiv">
                     <img src="{%static 'images/head.png' %}" alt="head">
-                    <input type="email" name="email" id="email" class="email" placeholder="abc.def@gsfe.tupcavite.edu.ph">
+                    <input name="username" id="username" class="username" placeholder="USERNAME">
                 </div>
                 <div class="inputdiv">
                     <img src="{%static 'images/eye.png' %}" alt="aa">
-                    <input type="password" name="pass" id="pass" class="pass" placeholder="password">
+                    <input type="password" name="password" id="password" class="password" placeholder="PASSWORD">
                 </div>
                 <div class="btn">
                     <button id="bb" class="tbtn" type="submit">LOG IN</button>
                     <a href="{% url 'votingApp:newreg1' %}">SIGN UP</a>
-                    <a href="{% url 'votingApp:comeleclog' %}">COMELEC LOG IN</a>
                 </div>
             </div>
         </div>
@@ -53,7 +50,7 @@
     <script>
         document.querySelector('.tbtn').onclick = function() {
 
-            var password = document.querySelector('.email').value,
+            var password = document.querySelector('.username').value,
                 password2 = document.querySelector('.pass').value;
 
             if (password == "") {

@@ -23,8 +23,9 @@
                 <div>
                     <div class="aa">
                         <img src="{% static 'images/head.png'%}" alt="head">
-                        {% for nef in data %}
-                        <h3>{{nef.name}}</h3>
+                        {% for data in data %}
+                        <h3>{{data.username}}</h3>
+                        <h3>{{data.status}}</h3>
                         {% endfor %}
                     </div>
                     <div class="bttn">
