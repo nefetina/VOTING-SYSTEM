@@ -24,15 +24,15 @@
     <div class="middle">
         <form method="POST" action="/votinga/">
             {%csrf_token%}
+            <div class="col-md-2 mb-3">
+                <label for="ids">IDs</label>
+                <select name="idno_id" class="custom-select" id="idno_id">
+             
+                    {% for data in data %}
+              <option  value="{{data.idno}}">{{data.idno}}</option>{% endfor %}
+            </select>
+            </div>
             <div class="row">
-                <div class="col-md-4 mb-3">
-                    <label for="ids">IDs</label>
-                    <select name="idno_id" class="custom-select" id="idno_id">
-                 
-                        {% for data in data %}
-                  <option  value="{{data.idno}}">{{data.idno}}</option>{% endfor %}
-                </select>
-                </div>
                 <div class="row1">
                     <label class="col-2 col-form-label" for="president">PRESIDENT</label>
                     <select class="form-control" name="president" id="president">
