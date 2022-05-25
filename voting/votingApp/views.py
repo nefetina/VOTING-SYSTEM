@@ -58,7 +58,6 @@ def peoples(request):
     
         return redirect('/homepage')
     
-
 def delete(request, id):
     data = candidates.objects.get(id=id)
     data.delete()
@@ -81,7 +80,8 @@ def result(request):
 @login_required(login_url='/index')
 def comelec(request):
     if request.user.is_authenticated and request.user.userType == 'COMSELEC':
-        return render(request, 'votingApp/comelec.html' )
+        data = candidates.objects.all()
+        return render(request, 'votingApp/comelec.html', {'data':data})
     return redirect('/index')
 
 @login_required(login_url='/index')
@@ -89,30 +89,34 @@ def application(request):
     if request.user.is_authenticated and request.user.userType == 'STDNT':
         return render(request, 'votingApp/application.html')
     return redirect('/index')
-    
+
+@login_required(login_url='/index')
 def voting(request):
-    data = registration.objects.filter(idno = request.user.pk)
-    print(data)
-    option = candidates.objects.filter(position='President')
-    option1 = candidates.objects.filter(position='Vicepresident')
-    option2 = candidates.objects.filter(position='Secretary')
-    option3 = candidates.objects.filter(position='Asec')
-    option4 = candidates.objects.filter(position='Auditor')
-    option5 = candidates.objects.filter(position='Treasurer')
-    option6 = candidates.objects.filter(position='Senator')
-    option7 = candidates.objects.filter(position='Governor')
-    context = {
-        'option':option,
-        'option1':option1,
-        'option2':option2,
-        'option3':option3,
-        'option4':option4,
-        'option5':option5,
-        'option6':option6,
-        'option7':option7,
-        'data': data
-    }
-    return render(request, 'votingApp/voting.html', context)
+    if request.user.is_authenticated and request.user.userType == 'STDNT':
+        data = registration.objects.filter(idno = request.user.pk)
+        print(data)
+        option = candidates.objects.filter(position='President')
+        option1 = candidates.objects.filter(position='Vicepresident')
+        option2 = candidates.objects.filter(position='Secretary')
+        option3 = candidates.objects.filter(position='Asec')
+        option4 = candidates.objects.filter(position='Auditor')
+        option5 = candidates.objects.filter(position='Treasurer')
+        option6 = candidates.objects.filter(position='Senator')
+        option7 = candidates.objects.filter(position='Governor')
+        context = {
+            'option':option,
+            'option1':option1,
+            'option2':option2,
+            'option3':option3,
+            'option4':option4,
+            'option5':option5,
+            'option6':option6,
+            'option7':option7,
+            'data': data
+        }
+        return render(request, 'votingApp/voting.html', context)
+    return redirect ('/index')
+
 
 def votinga(request):
     if request.method == 'POST':
@@ -147,6 +151,7 @@ def votinga(request):
         ids.status = 'VOTED'
         ids.save()
         return redirect ('/homepage')
+
 
 def logoutUser(request):
     logout(request)

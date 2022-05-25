@@ -29,7 +29,7 @@
 
         </div>
     </div>
-    <form method='GET'>
+    <form method='POST'>
         <div class="mid">
             <div class="table">
                 <table id="candidates" class="table d-print-table-cell">
@@ -45,7 +45,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for files in nef1 %}
+                        {% for files in data %}
                         <tr>
                             <td>{{files.firstname}}</td>
                             <td>{{files.surname}}</td>
@@ -65,13 +65,8 @@
         </div>
     </form>
 
-   {% comment %}<div class="btns">
-        <button id="b">REMOVE</button>
-        <button id="b">UPLOAD</button>
-    </div>{% endcomment %}
-
     <div class="last">
-        <a type="button" href="{% url 'votingApp:index' %}" id="button">LOG OUT</a>
+        <a type="button" href="{% url 'votingApp:logout' %}" id="button">LOG OUT</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
