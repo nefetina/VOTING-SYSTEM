@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import StudentRegistration
 from .models import candidates, vote, registration
+from django.core.mail import send_mail
+from django.conf import settings
 import mysql.connector as sql
 
 
@@ -153,6 +155,26 @@ def votinga(request):
         return redirect ('/homepage')
 
 
+def contact(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        send_mail(
+            name, #name of sender
+            message,#message
+            'nefetinatomas005@gmail.com',
+            [email],
+        )
+        
+        return redirect('/index')
+    else:
+        return render(request, 'votingApp/contact.html')
+
+def comresult(request):
+    return render(request, 'votingApp/comresult.html')
+    
 def logoutUser(request):
     logout(request)
     return redirect('/index')

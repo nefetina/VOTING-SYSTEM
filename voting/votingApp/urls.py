@@ -18,4 +18,6 @@ urlpatterns =[
     path('delete/<int:id>', views.delete, name='delete'),
     path('voting/', views.voting, name='voting'),
     path('votinga/', views.votinga, name='votinga'),
+    path('contact/', views.contact, name='contact'),
+    path('comresult/', views.comresult, name='comresult'),
 ]

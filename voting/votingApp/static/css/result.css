@@ -66,6 +66,12 @@ p {
     justify-content: center;
 }
 
+.pdf {
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
 .last {
     display: flex;
     align-self: flex-end;

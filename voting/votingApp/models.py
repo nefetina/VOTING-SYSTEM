@@ -1,5 +1,6 @@
 from enum import auto
 from pickle import TRUE
+from urllib.parse import MAX_CACHE_SIZE
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 import datetime
@@ -73,5 +74,9 @@ class vote(models.Model):
     governor8 = models.CharField(max_length=30)
     governor9 = models.CharField(max_length=30)
 
+class mail(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    message = models.CharField(max_length=500)
 
 
