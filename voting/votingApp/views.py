@@ -163,9 +163,9 @@ def contact(request):
 
         send_mail(
             name, #name of sender
-            message,#message
-            'codemtv1429@gmail.com',
-            [email],
+            email + "\n" + message, #subject
+            email,
+            ['codemtv1429@gmail.com'],
         )
         
         return redirect('/index')
