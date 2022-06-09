@@ -164,7 +164,7 @@ def contact(request):
         send_mail(
             name, #name of sender
             message,#message
-            'nefetinatomas005@gmail.com',
+            'codemtv1429@gmail.com',
             [email],
         )
         
@@ -174,6 +174,7 @@ def contact(request):
 
 def comresult(request):
     return render(request, 'votingApp/comresult.html')
+    
     
 def logoutUser(request):
     logout(request)

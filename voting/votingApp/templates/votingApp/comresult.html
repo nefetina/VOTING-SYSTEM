@@ -25,6 +25,7 @@
         </div>
     </div>
     <form method='POST'>
+        {% csrf_token %}
         <div class="res">
             <div class="pdf">
                 <button id="button">PDF</button>
