@@ -20,4 +20,5 @@ urlpatterns =[
     path('votinga/', views.votinga, name='votinga'),
     path('contact/', views.contact, name='contact'),
     path('comresult/', views.comresult, name='comresult'),
+    path('pdf/', views.pdf, name='pdf'),
 ]

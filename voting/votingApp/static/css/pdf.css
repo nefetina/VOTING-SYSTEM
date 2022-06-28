@@ -1,0 +1,68 @@
+body {
+    width: 100%;
+    display: grid;
+}
+
+form {
+    width: 100%;
+}
+
+#candidates {
+    width: 100%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.sheet {
+    display: flex;
+}
+
+.top {
+    display: flex;
+    background-color: #661617;
+    width: 100%;
+    height: 250px;
+    padding: 40px;
+    font-family: 'Saira', sans-serif;
+    color: white;
+}
+
+p {
+    font-size: 40pt;
+}
+
+.mid {
+    width: 100%;
+    padding: 5px;
+}
+
+.table {
+    width: 100%;
+    justify-self: center;
+}
+
+.last {
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.last a {
+    color: white;
+    text-decoration: none;
+    font-size: 16;
+    font-weight: bold;
+    margin-right: 5%;
+}
+
+.last a:hover {
+    color: black
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+}

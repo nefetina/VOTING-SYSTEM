@@ -10,7 +10,7 @@
     <title>COMELEC</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="{%static 'css/comelec.css' %}">
+    <link rel="stylesheet" href="{%static 'css/pdf.css' %}">
 
 </head>
 
@@ -29,46 +29,43 @@
 
         </div>
     </div>
-    <a type="button" href="{% url 'votingApp:pdf' %}" id="button">DOWNLOAD AS PDF</a>
     <form method='POST'>
-        <div class="table">
-            <table id="candidates" class="table d-print-table-cell">
-                <thead>
-                    <tr>
-                        <th scope="col">Firstname</th>
-                        <th scope="col">Surname</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Course & Section</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Partylist</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for files in data %}
-                    <tr>
-                        <td>{{files.firstname}}</td>
-                        <td>{{files.surname}}</td>
-                        <td>{{files.age}}</td>
-                        <td>{{files.course}}</td>
-                        <td>{{files.position}}</td>
-                        <td>{{files.partylist}}</td>
-                        <td><button class="delete"><a href="{% url 'votingApp:delete' files.id %}">Delete</a></button></td>
+        <table id="candidates" class="table table-cell" >
+            <thead>
+                <tr>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Course & Section</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Partylist</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for files in data %}
+                <tr>
+                    <td>{{files.firstname}}</td>
+                    <td>{{files.surname}}</td>
+                    <td>{{files.age}}</td>
+                    <td>{{files.course}}</td>
+                    <td>{{files.position}}</td>
+                    <td>{{files.partylist}}</td>
 
 
-                    </tr>
-                    {% endfor %}
+                </tr>
+                {% endfor %}
 
-                </tbody>
-            </table>
-        </div>
-
+            </tbody>
+        </table>
+    
     </form>
 
     <div class="last">
-        <a type="button" href="{% url 'votingApp:comresult' %}" id="button">RESULT</a>
-        <a type="button" href="{% url 'votingApp:logout' %}" id="button">LOG OUT</a>
+        <br>
+        <button onclick="window.print()" class="btn btn-primary"><i class="fa fa-address-book-o" aria-hidden="true"></i>Download</button><br>
+        <hr>
     </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

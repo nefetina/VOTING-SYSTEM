@@ -73,18 +73,18 @@ def homepage(request):
         return render(request, 'votingApp/homepage.html', context)
     return redirect('/index')
 
-@login_required(login_url='/index')
+#@login_required(login_url='/index')
 def result(request):
     if request.user.is_authenticated and request.user.userType == 'STDNT':
         return render(request, 'votingApp/result.html')
-    return redirect('/index')
+    return render(request, 'votingApp/result.html')
 
-@login_required(login_url='/index')
+
 def comelec(request):
-    if request.user.is_authenticated and request.user.userType == 'COMSELEC':
+    #if request.user.is_authenticated and request.user.userType == 'COMSELEC':
         data = candidates.objects.all()
         return render(request, 'votingApp/comelec.html', {'data':data})
-    return redirect('/index')
+    #return redirect('/index')
 
 @login_required(login_url='/index')
 def application(request):
@@ -175,6 +175,11 @@ def contact(request):
 def comresult(request):
     return render(request, 'votingApp/comresult.html')
     
+def pdf(request):
+    #if request.user.is_authenticated and request.user.userType == 'COMSELEC':
+        data = candidates.objects.all()
+        return render(request, 'votingApp/pdf.html', {'data':data})
+    #return redirect('/index')
     
 def logoutUser(request):
     logout(request)
