@@ -21,12 +21,12 @@
         <img src="{%static 'images/usg.png' %}" alt="usg">
     </div>
     <form method="post">
+        {% csrf_token %}
         <div class="rect1">
         </div>
         <div class="kanan">
             <div class="inner">
-                <h1>WELCOME</h1>
-                {% csrf_token %}
+                <p>WELCOME</p>
                 <div class="inputdiv">
                     <img src="{%static 'images/head.png' %}" alt="head">
                     <input name="username" id="username" class="username" placeholder="USERNAME">

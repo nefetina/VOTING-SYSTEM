@@ -142,3 +142,5 @@ h3 {
 .form-control {
     width: 250px;
 }
+
+@media only screen and (max-width:1000px) {}

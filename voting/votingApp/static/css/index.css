@@ -111,6 +111,7 @@ form {
 }
 
 p {
+    color: white;
     margin-top: 10px;
     justify-self: center;
 }
@@ -126,13 +127,15 @@ a {
 
 @media only screen and (max-width:1200px) {
     body {
+        width: 100%;
+        height: 100vh;
         display: grid;
         background-color: #661617;
+        justify-content: center;
     }
     .kanan {
         width: 100%;
-        height: 100%;
-        position: relative;
+        height: 30vh;
         background-color: #661617;
     }
     .rect1 {
@@ -143,19 +146,53 @@ a {
     }
     .kaliwa img {
         width: 200px;
-        height: auto;
-        margin: 20px 0 20px 0;
+        height: 200px;
+        margin-top: 15px;
     }
     .kaliwa {
         width: 100%;
+        height: 15vh;
         background-color: #661617;
         display: flex;
-        justify-self: center;
-        margin: 20px 0 20px 0;
+        margin: 10px 0 10px 0;
     }
     form {
         width: 100%;
-        justify-self: center;
-        margin: 20px 0 20px 0;
+        height: 75vh;
+    }
+    .inner {
+        width: 100%;
+        height: 30vh;
+    }
+    p {
+        font-size: 24pt;
+        color: white;
+    }
+    .inputdiv {
+        height: 40px;
+        margin-bottom: 10px;
+    }
+    .inputdiv img {
+        width: 40px;
+        height: 40px;
+    }
+    .inputdiv input {
+        height: 40px;
+    }
+    .btn {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+    }
+    #bb {
+        width: 250px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: white;
+        color: black;
+    }
+    #bb:hover {
+        background-color: #C4C4C4;
+        color: black;
     }
 }

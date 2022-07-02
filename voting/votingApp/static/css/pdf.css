@@ -66,3 +66,5 @@ p {
         -webkit-print-color-adjust: exact;
     }
 }
+
+@media only screen and (max-width:1000px) {}

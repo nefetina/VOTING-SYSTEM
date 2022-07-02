@@ -76,8 +76,9 @@ def homepage(request):
 #@login_required(login_url='/index')
 def result(request):
     if request.user.is_authenticated and request.user.userType == 'STDNT':
+        #repeated_names = vote.objects.values('school_name', 'category').annotate(count('id')).order_by().filter(id__count__gt=0)   # <--- gt 0 will get all the objects having occurred in DB i.e is greater than 0
+        #return render(request, 'votingApp/result.html', {'repeated_names':repeated_names})
         return render(request, 'votingApp/result.html')
-    return render(request, 'votingApp/result.html')
 
 
 def comelec(request):
@@ -171,15 +172,18 @@ def contact(request):
         return redirect('/index')
     else:
         return render(request, 'votingApp/contact.html')
-
+@login_required(login_url='/index')
 def comresult(request):
-    return render(request, 'votingApp/comresult.html')
-    
+    if request.user.is_authenticated and request.user.userType == 'COMSELEC':
+        return render(request, 'votingApp/comresult.html')
+    return redirect('/index')
+
+@login_required(login_url='/index')
 def pdf(request):
-    #if request.user.is_authenticated and request.user.userType == 'COMSELEC':
+    if request.user.is_authenticated and request.user.userType == 'COMSELEC':
         data = candidates.objects.all()
         return render(request, 'votingApp/pdf.html', {'data':data})
-    #return redirect('/index')
+    return redirect('/index')
     
 def logoutUser(request):
     logout(request)
