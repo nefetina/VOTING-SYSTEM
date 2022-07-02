@@ -76,6 +76,13 @@ def homepage(request):
 #@login_required(login_url='/index')
 def result(request):
     if request.user.is_authenticated and request.user.userType == 'STDNT':
+        #names = candidates.objects.all()
+        #res = [names]
+        #voted_names = vote.objects.all().filter(president=president)
+        #res1 = [voted_names]
+        #for res in res1:
+        #    if x == 
+
         #repeated_names = vote.objects.values('school_name', 'category').annotate(count('id')).order_by().filter(id__count__gt=0)   # <--- gt 0 will get all the objects having occurred in DB i.e is greater than 0
         #return render(request, 'votingApp/result.html', {'repeated_names':repeated_names})
         return render(request, 'votingApp/result.html')

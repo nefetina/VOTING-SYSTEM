@@ -19,13 +19,17 @@ p {
 }
 
 .a img {
-    width: 200px;
+    width: 150px;
 }
 
 .middle {
     width: 100%;
     display: grid;
     padding: 10px;
+}
+
+.id {
+    width: 200px;
 }
 
 form {
@@ -89,6 +93,12 @@ button {
     text-align: center;
 }
 
+#subbtn {
+    width: 200px;
+    height: 40px;
+    font-size: 14pt;
+}
+
 #subbtn:hover,
 #subbtn:active {
     background-color: white;
@@ -143,4 +153,63 @@ h3 {
     width: 250px;
 }
 
-@media only screen and (max-width:1000px) {}
+@media only screen and (max-width:1200px) {
+    body {
+        display: grid;
+        width: 100%;
+        height: 100vh;
+    }
+    .sheet {
+        width: 100%;
+    }
+    a {
+        height: 25vh;
+    }
+    .middle {
+        display: grid;
+    }
+    form {
+        display: grid;
+        justify-content: center;
+    }
+    .row {
+        display: grid;
+        justify-content: center;
+    }
+    .row1 {
+        justify-content: center;
+    }
+    .aa {
+        display: grid;
+        justify-content: center;
+    }
+    .column {
+        justify-content: center;
+    }
+    .aaa {
+        display: grid;
+        justify-content: center;
+    }
+    .id {
+        justify-self: center;
+    }
+    p {
+        font-size: 24pt;
+    }
+    label {
+        font-size: 18pt;
+    }
+    .last {
+        height: 15px;
+        background-color: #661617;
+        display: grid;
+        align-self: center;
+        justify-self: center;
+    }
+    .submit {
+        justify-content: center;
+    }
+    .form-control {
+        justify-content: center;
+    }
+}
