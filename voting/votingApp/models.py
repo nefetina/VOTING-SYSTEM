@@ -79,4 +79,6 @@ class mail(models.Model):
     email = models.EmailField(max_length=50)
     message = models.CharField(max_length=500)
 
-
+class result(models.Model):
+    name = models.CharField(max_length=50)
+    vote = models.IntegerField(max_length=10)

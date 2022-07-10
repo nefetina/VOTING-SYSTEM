@@ -35,6 +35,7 @@
             <table id="candidates" class="table d-print-table-cell">
                 <thead>
                     <tr>
+                        <th scope="col">Candidate No.</th>
                         <th scope="col">Firstname</th>
                         <th scope="col">Surname</th>
                         <th scope="col">Age</th>
@@ -47,6 +48,7 @@
                 <tbody>
                     {% for files in data %}
                     <tr>
+                        <td>{{files.id}}</td>
                         <td>{{files.firstname}}</td>
                         <td>{{files.surname}}</td>
                         <td>{{files.age}}</td>
@@ -54,8 +56,6 @@
                         <td>{{files.position}}</td>
                         <td>{{files.partylist}}</td>
                         <td><button class="delete"><a href="{% url 'votingApp:delete' files.id %}">Delete</a></button></td>
-
-
                     </tr>
                     {% endfor %}
 

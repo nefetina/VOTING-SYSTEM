@@ -4,7 +4,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import StudentRegistration
-from .models import candidates, vote, registration
+from .models import candidates, vote, registration,result
+from django.db.models import Count
 from django.core.mail import send_mail
 from django.conf import settings
 import mysql.connector as sql
@@ -39,6 +40,7 @@ def newreg1(request):# student registration
         form = StudentRegistration(request.POST)
         if form.is_valid():
             form.save()
+            
             return redirect ('/index')
     context =  {'form': form }
     return render(request, 'votingApp/newreg.html', context)
@@ -54,7 +56,7 @@ def peoples(request):
         partylist=request.POST.get('partylist')
         image=request.POST.get('image')
         lala=request.POST.get('lala')
-        
+
         datas = candidates.objects.create(firstname=firstname, surname=surname, course=course, age=age, gender=gender, position=position, partylist=partylist, image=image, description=lala)
         datas.save()
     
@@ -76,23 +78,17 @@ def homepage(request):
 #@login_required(login_url='/index')
 def result(request):
     if request.user.is_authenticated and request.user.userType == 'STDNT':
-        #names = candidates.objects.all()
-        #res = [names]
-        #voted_names = vote.objects.all().filter(president=president)
-        #res1 = [voted_names]
-        #for res in res1:
-        #    if x == 
-
-        #repeated_names = vote.objects.values('school_name', 'category').annotate(count('id')).order_by().filter(id__count__gt=0)   # <--- gt 0 will get all the objects having occurred in DB i.e is greater than 0
-        #return render(request, 'votingApp/result.html', {'repeated_names':repeated_names})
-        return render(request, 'votingApp/result.html')
+        data = vote.objects.all()
+        #datas = vote.objects.all()
+        return render(request, 'votingApp/result.html',{'data':data})
+    return redirect('/index')
 
 
 def comelec(request):
-    #if request.user.is_authenticated and request.user.userType == 'COMSELEC':
+    if request.user.is_authenticated and request.user.userType == 'COMSELEC':
         data = candidates.objects.all()
         return render(request, 'votingApp/comelec.html', {'data':data})
-    #return redirect('/index')
+    return redirect('/index')
 
 @login_required(login_url='/index')
 def application(request):
@@ -101,10 +97,9 @@ def application(request):
     return redirect('/index')
 
 @login_required(login_url='/index')
-def voting(request):
+def voting(request):# option setting
     if request.user.is_authenticated and request.user.userType == 'STDNT':
         data = registration.objects.filter(idno = request.user.pk)
-        print(data)
         option = candidates.objects.filter(position='President')
         option1 = candidates.objects.filter(position='Vicepresident')
         option2 = candidates.objects.filter(position='Secretary')
@@ -128,7 +123,7 @@ def voting(request):
     return redirect ('/index')
 
 
-def votinga(request):
+def votinga(request): #vote casting
     if request.method == 'POST':
         idno_id = request.POST.get('idno_id')
         president = request.POST.get('president')
@@ -163,7 +158,7 @@ def votinga(request):
         return redirect ('/homepage')
 
 
-def contact(request):
+def contact(request):#send email
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
@@ -179,10 +174,12 @@ def contact(request):
         return redirect('/index')
     else:
         return render(request, 'votingApp/contact.html')
+
 @login_required(login_url='/index')
 def comresult(request):
     if request.user.is_authenticated and request.user.userType == 'COMSELEC':
-        return render(request, 'votingApp/comresult.html')
+        data = vote.objects.all()
+        return render(request, 'votingApp/comresult.html',{'data':data})
     return redirect('/index')
 
 @login_required(login_url='/index')
@@ -195,4 +192,5 @@ def pdf(request):
 def logoutUser(request):
     logout(request)
     return redirect('/index')
+    
 

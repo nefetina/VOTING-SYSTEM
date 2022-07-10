@@ -26,19 +26,173 @@
     </div>
     <form method='POST'>
         <div class="res">
-            <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="badge badge-primary badge-pill">14</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  A second list item
-                  <span class="badge badge-primary badge-pill">2</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  A third list item
-                  <span class="badge badge-primary badge-pill">1</span>
-                </li>
-            </ul>
+            {% comment %}<table id="candidates" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Candidate No.</th>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Surname</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Course & Section</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Partylist</th>
+                        <th scope="col">Votes</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Candidate No.</th>
+                        <th scope="col">date</th>
+                        <th scope="col">president</th>
+                        <th scope="col">vicepresident</th>
+                        <th scope="col">secretary</th>
+                        <th scope="col">asec</th>
+                        <th scope="col">treasurer</th>
+                        <th scope="col">senator1</th>
+                        <th scope="col">senator2</th>
+                        <th scope="col">senator3</th>
+                        <th scope="col">senator4</th>
+                        <th scope="col">senator5</th>
+                        <th scope="col">senator6</th>
+                        <th scope="col">governor</th>
+                        <th scope="col">governor1</th>
+                        <th scope="col">governor2</th>
+                        <th scope="col">governor3</th>
+                        <th scope="col">governor4</th>
+                        <th scope="col">governor5</th>
+                        <th scope="col">governor6</th>
+                        <th scope="col">governor7</th>
+                        <th scope="col">governor8</th>
+                        <th scope="col">governor9</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for files in data %}
+                    <tr>
+                        <td>{{files.id}}</td>
+                        <td>{{files.firstname}}</td>
+                        <td>{{files.surname}}</td>
+                        <td>{{files.age}}</td>
+                        <td>{{files.course}}</td>
+                        <td>{{files.position}}</td>
+                        <td>{{files.partylist}}</td>
+                        <td></td>
+                    </tr>
+                        <td>{{files.id}}</td>
+                        <td>{{files.date}}</td>
+                        <td>{{files.president}}</td>
+                        <td>{{files.vicepresident}}</td>
+                        <td>{{files.secretary}}</td>
+                        <td>{{files.asec}}</td>
+                        <td>{{files.treasurer}}</td>
+                        <td>{{files.senator1}}</td>
+                        <td>{{files.senator2}}</td>
+                        <td>{{files.senator3}}</td>
+                        <td>{{files.senator4}}</td>
+                        <td>{{files.senator5}}</td>
+                        <td>{{files.senator6}}</td>
+                        <td>{{files.governor}}</td>
+                        <td>{{files.governor1}}</td>
+                        <td>{{files.governor2}}</td>
+                        <td>{{files.governor3}}</td>
+                        <td>{{files.governor4}}</td>
+                        <td>{{files.governor5}}</td>
+                        <td>{{files.governor6}}</td>
+                        <td>{{files.governor7}}</td>
+                        <td>{{files.governor8}}</td>
+                        <td>{{files.governor9}}</td>
+                    </tr>
+                    {% endfor %}{% endcomment %}
+
+                </tbody>
+            </table>
+            <div>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Candidate No.</th>
+                        <th scope="col">date</th>
+                        <th scope="col">president</th>
+                        <th scope="col">vicepresident</th>
+                        <th scope="col">secretary</th>
+                        <th scope="col">asec</th>
+                        <th scope="col">treasurer</th>
+                        
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for files in data %}
+                  <tr>
+                    <td>{{files.id}}</td>
+                    <td>{{files.date}}</td>
+                    <td>{{files.president}}</td>
+                    <td>{{files.vicepresident}}</td>
+                    <td>{{files.secretary}}</td>
+                    <td>{{files.asec}}</td>
+                    <td>{{files.treasurer}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+              <div>
+              <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    
+                    <th scope="col">senator1</th>
+                    <th scope="col">senator2</th>
+                    <th scope="col">senator3</th>
+                    <th scope="col">senator4</th>
+                    <th scope="col">senator5</th>
+                    <th scope="col">senator6</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                {% for files in data %}
+                  <tr>
+                    <td>{{files.senator1}}</td>
+                    <td>{{files.senator2}}</td>
+                    <td>{{files.senator3}}</td>
+                    <td>{{files.senator4}}</td>
+                    <td>{{files.senator5}}</td>
+                    <td>{{files.senator6}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">governor1</th>
+                    <th scope="col">governor2</th>
+                    <th scope="col">governor3</th>
+                    <th scope="col">governor4</th>
+                    <th scope="col">governor5</th>
+                    <th scope="col">governor6</th>
+                    <th scope="col">governor7</th>
+                    <th scope="col">governor8</th>
+                    <th scope="col">governor9</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for files in data %}
+                  <tr>
+                    <td>{{files.governor1}}</td>
+                    <td>{{files.governor2}}</td>
+                    <td>{{files.governor3}}</td>
+                    <td>{{files.governor4}}</td>
+                    <td>{{files.governor5}}</td>
+                    <td>{{files.governor6}}</td>
+                    <td>{{files.governor7}}</td>
+                    <td>{{files.governor8}}</td>
+                    <td>{{files.governor9}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
         </div>
     </form>
     <div class="last">

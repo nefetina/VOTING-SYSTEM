@@ -28,8 +28,9 @@
                 <label for="ids">IDs</label>
                 <select name="idno_id" class="custom-select" id="idno_id">
              
-                    {% for data in data %}
-              <option  value="{{data.idno}}">{{data.idno}}</option>{% endfor %}
+                {% for data in data %}
+                <option  value="{{data.idno}}">{{data.idno}}</option>
+                {% endfor %}
             </select>
             </div>
             <div class="row">
@@ -38,7 +39,7 @@
                     <select class="form-control" name="president" id="president">
                         <option selected disabled value="">--SELECT ONE--</option>
                         {% for o in option%}
-                        <option>{{ o.firstname}} {{o.surname}}</option>
+                        <option>  {{ o.firstname}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -47,7 +48,7 @@
                     <select class="form-control" name="vice" id="vice">
                         <option selected disabled value="">--SELECT ONE--</option>
                         {% for o in option1%}
-                        <option>{{ o.firstname}} {{o.surname}}</option>
+                        <option> {{ o.firstname}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -56,7 +57,7 @@
                     <select class="form-control" name="secretary" id="secretary">
                         <option selected disabled value="">--SELECT ONE--</option>
                         {% for o in option2%}
-                        <option>{{ o.firstname}} {{o.surname}}</option>
+                        <option> {{ o.firstname}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -67,7 +68,7 @@
                     <select class="form-control" name="asec" id="asec">
                         <option selected disabled value="">--SELECT ONE--</option>
                         {% for o in option3%}
-                        <option>{{ o.firstname}} {{o.surname}}</option>
+                        <option> {{ o.firstname}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -75,8 +76,8 @@
                     <label class="col-form-label" for="treasurer">TREASURER</label>
                     <select class="form-control" name="treasurer" id="treasurer">
                         <option selected disabled value="">--SELECT ONE--</option>
-                        {% for o in option4%}
-                        <option>{{ o.firstname}} {{o.surname}}</option>
+                        {% for o in option5%}
+                        <option> {{ o.firstname}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -84,8 +85,8 @@
                     <label class="col-form-label" for="auditor">AUDITOR</label>
                     <select class="form-control" name="auditor" id="auditor">
                         <option selected disabled value="">--SELECT ONE--</option>
-                        {% for o in option5%}
-                        <option>{{ o.firstname}} {{o.surname}}</option>
+                        {% for o in option4%}
+                        <option> {{ o.firstname}} {{o.surname}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -97,7 +98,7 @@
                         <select class="form-control" name="senator1" id="senator1">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option6%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -105,7 +106,7 @@
                         <select class="form-control" name="senator2" id="senator2">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option6%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -113,7 +114,7 @@
                         <select class="form-control" name="senator3" id="senator3">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option6%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -123,7 +124,7 @@
                         <select class="form-control" name="senator4" id="senator4">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option6%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -131,7 +132,7 @@
                         <select class="form-control" name="senator5" id="senator5">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option6%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -139,7 +140,7 @@
                         <select class="form-control" name="senator6" id="senator6">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option6%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -152,7 +153,7 @@
                         <select class="form-control" name="governor" id="governor">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -160,7 +161,7 @@
                         <select class="form-control" name="governor1" id="governor1">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -168,7 +169,7 @@
                         <select class="form-control" name="governor2" id="governor2">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -176,7 +177,7 @@
                         <select class="form-control" name="governor3" id="governor3">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -184,7 +185,7 @@
                         <select class="form-control" name="governor4" id="governor4">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -194,7 +195,7 @@
                         <select class="form-control" name="governor5" id="governor5">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -202,7 +203,7 @@
                         <select class="form-control" name="governor6" id="governor6">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -210,7 +211,7 @@
                         <select class="form-control" name="governor7" id="governor7">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -218,7 +219,7 @@
                         <select class="form-control" name="governor8" id="governor8">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>
@@ -226,7 +227,7 @@
                         <select class="form-control" name="governor9" id="governor9">
                             <option selected disabled value="">--SELECT ONE--</option>
                             {% for o in option7%}
-                            <option>{{ o.firstname}} {{o.surname}}</option>
+                            <option> {{ o.firstname}} {{o.surname}}</option>
                             {% endfor %}
                     </select>
                     </div>

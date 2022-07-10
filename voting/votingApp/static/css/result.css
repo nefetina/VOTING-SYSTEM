@@ -7,6 +7,7 @@ body {
 }
 
 .sheet {
+    width: 100%;
     display: flex;
 }
 
@@ -38,33 +39,11 @@ p {
 .res {
     width: 100%;
     display: grid;
-    margin: 0 25px 0 25px;
+    background-color: azure;
 }
 
-.pers {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    margin-top: 2%;
-}
-
-.pers img {
-    height: 150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.pers label {
-    display: grid;
-    font-family: 'saira', sans-serif;
-    font-size: 15pt;
-    color: white;
-    text-align: center;
-}
-
-.sekand {
-    justify-content: center;
+table:hover {
+    background-color: grey;
 }
 
 .pdf {
@@ -92,7 +71,12 @@ p {
     color: black
 }
 
-@media only screen and (min-width:1000px) {
+#candidates {
+    width: 100%;
+    padding: 5px;
+}
+
+@media only screen and (max-width:1200px) {
     body {
         width: 100%;
         height: 100vh;
@@ -116,10 +100,18 @@ p {
     p {
         font-size: 20pt;
     }
-    .pers {
+    .res {
         display: grid;
+        width: 100%;
     }
-    .sekand {
-        display: grid;
+    .table {
+        width: 100%;
+        padding: 5px;
+    }
+    .last {
+        display: none;
+    }
+    form {
+        padding: 2px;
     }
 }
